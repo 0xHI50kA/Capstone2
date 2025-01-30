@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Checker</title>
+    <style>
+        /* body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f8ff;
+        } */
+        .container {
+            margin: auto;
+            width: 50%;
+            margin-top: 50px;
+            /* background-color: #ffffff; */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        input[type="number"] {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #2b7de2;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #004080;
+        }
+        #backButton {
+            background-color: #FF0000;
+            margin-top: 15px;
+            color: white;
+        }
+        p {
+            font-size: 1rem;
+            color: #555;
+            margin-top: 20px;
+        }
+    </style>
+           <link rel="stylesheet" href="AiHeader.css">
+           <!--=========== MY CSS LINK START =============-->
+        
+           <link rel="stylesheet" type="text/css" href="index3.css">
+            
+           <!--=========== MY CSS LINK END =============-->
+       <!--============ FONT AWESOME CSS LINK START ============-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/styles.css">
+
+       <!--============ FONT AWESOME CSS LINK END ============-->
+</head>
+<body>
+    <button style="
+    position: absolute;
+padding: 10px 20px; 
+margin-top: 90px;
+background-color: #6c757d; 
+color: white; 
+border: none; 
+border-radius: 5px; 
+cursor: pointer; 
+font-size: 16px;
+transition: background-color 0.2s ease; margin-left: 40px;
+" onclick="window.location.href='forwhom.html'">← Back</button>
+    <!-- <header>
+        <div class="logo">
+            <a href="index.html"><i class="fa-solid fa-notes-medical"></i>SymptoAid</a>
+        </div>
+        <h2>AI Symptom Checker</h2>
+    </header> -->
+    <header class="headin">
+
+
+    </header>
+    <div class="container">
+        <h1>How Old Are You?</h1>
+        <input type="number" id="ageInput" placeholder="Enter your age" />
+        <br />
+        <button onclick="checkAge()" id="submitButton">Submit</button>
+        <div id="backDiv" style="display:none;">
+            <button onclick="goBack()" id="backButton">Back to Home</button>
+            <button onclick="goBack1()" id="backButton">back to terms and condition</button>
+        </div>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function checkAge() {
+            const age = document.getElementById("ageInput").value;
+            const message = document.getElementById("message");
+            const submitButton = document.getElementById("submitButton");
+            const backDiv = document.getElementById("backDiv");
+
+            if (!age) {
+                message.textContent = "Please enter your age.";
+                return;
+            }
+
+            if (age < 18) {
+                // Remove Submit button and show back button
+                submitButton.style.display = "none";
+                backDiv.style.display = "block";
+
+                message.textContent = 
+                    "Users under 18 cannot use the symptom checker. " +
+                    "Please seek assistance from an adult or visit a nearby healthcare center.";
+                message.style.color = "red";
+            } else {
+                // Redirect if user is 18+
+                message.textContent = 
+                    "You are eligible to use the symptom checker. Redirecting...";
+                message.style.color = "green";
+
+                // Redirect to the symptom checker page
+                setTimeout(() => {
+                    window.location.href = "forwhom.html";
+                }, 2000);
+            }
+        }
+
+        function goBack() {
+            window.location.href = "../index.html";
+        }
+        function goBack1() {
+            window.location.href = "tems.html";
+        }
+    </script>
+    <script type="text/javascript" src="AiHeader.js"></script>
+</body>
+</html>

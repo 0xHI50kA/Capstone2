@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Symptom Checker</title>
+    <link rel="stylesheet" href="AiHeader.css">
+    <!--============ FONT AWESOME CSS LINK START ============-->
+
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="stylesheet" href="css/styles.css">
+ 
+        <!--============ FONT AWESOME CSS LINK END ============-->
+</head>
+<body>
+    <button style="
+    position: absolute;
+padding: 10px 20px; 
+margin-top: 90px;
+background-color: #6c757d; 
+color: white; 
+border: none; 
+border-radius: 5px; 
+cursor: pointer; 
+font-size: 16px;
+transition: background-color 0.2s ease; margin-left: 40px;
+" onclick="window.location.href='tems.html'">← Back</button>
+     <header>
+        <div class="logo">
+            <a href="index.html"><i class="fa-solid fa-notes-medical"></i>SymptoAid</a>
+        </div>
+        <h2>AI Symptom Checker</h2>
+    </header>
+    <main>
+        <section>
+            <h2>Who is the symptom checking for?</h2>
+            <div class="card">
+                <p>Please select who will undergo the symptom check. Your selection will help customize the questions and suggestions:</p>
+                <div class="btn-container">
+                    <button class="btn" id="me-button">Me</button>
+                    <button class="btn" id="nephew-button">Someone else</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Handle button clicks
+        const meButton = document.getElementById("me-button");
+        const nephewButton = document.getElementById("nephew-button");
+
+        meButton.addEventListener("click", () => {
+            // Redirect to the "Me" assessment page
+            window.location.href = "me1.html";
+        });
+
+        nephewButton.addEventListener("click", () => {
+            // Redirect to the "Nephew" assessment page
+            window.location.href = "menephew.html";
+        });
+        function goBack() {
+            window.location.href = "../index.html";
+        }
+
+        function goToPreviousSlide() {
+            window.history.back(); // Navigate to the previous slide
+        }
+    </script>
+</body>
+</html>

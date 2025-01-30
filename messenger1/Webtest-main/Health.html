@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health Topics A-Z</title>
+  <link rel="stylesheet" href="css.css">
+  <script src="Jays.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+        <a href="index.html"><i class="fa-solid fa-notes-medical"></i>SymptoAid</a>
+    </div>
+    <h2 style="color: black;">Health Topics</h2>
+</header>
+
+<button style="
+position: absolute;
+padding: 10px 20px; 
+margin-top: 90px;
+background-color: #6c757d; 
+color: white; 
+border: none; 
+border-radius: 5px; 
+cursor: pointer; 
+font-size: 16px;
+transition: background-color 0.2s ease; margin-left: 40px;
+" onclick="window.location.href='../../index.html#htopic'">← Back</button>
+
+  <nav class="alphabet">
+    <ul>
+      <li><a href="#" onclick="showTopics('A')">A</a></li>
+      <li><a href="#" onclick="showTopics('B')">B</a></li>
+      <li><a href="#" onclick="showTopics('C')">C</a></li>
+      <li><a href="#" onclick="showTopics('D')">D</a></li>
+      <li><a href="#" onclick="showTopics('E')">E</a></li>
+      <li><a href="#" onclick="showTopics('F')">F</a></li>
+      <li><a href="#" onclick="showTopics('G')">G</a></li>
+      <li><a href="#" onclick="showTopics('H')">H</a></li>
+      <li><a href="#" onclick="showTopics('I')">I</a></li>
+      <li><a href="#" onclick="showTopics('J')">J</a></li>
+      <li><a href="#" onclick="showTopics('K')">K</a></li>
+      <li><a href="#" onclick="showTopics('L')">L</a></li>
+      <li><a href="#" onclick="showTopics('M')">M</a></li>
+      <li><a href="#" onclick="showTopics('N')">N</a></li>
+      <li><a href="#" onclick="showTopics('O')">O</a></li>
+      <li><a href="#" onclick="showTopics('P')">P</a></li>
+      <li><a href="#" onclick="showTopics('Q')">Q</a></li>
+      <li><a h50px;#" onclick="showTopics('R')">R</a></li>
+      <li><a href="#" onclick="showTopics('S')">S</a></li>
+      <li><a href="#" onclick="showTopics('T')">T</a></li>
+      <li><a href="#" onclick="showTopics('U')">U</a></li>
+      <li><a href="#" onclick="showTopics('V')">V</a></li>
+      <li><a href="#" onclick="showTopics('W')">W</a></li>
+      <li><a href="#" onclick="showTopics('X')">X</a></li>
+      <li><a href="#" onclick="showTopics('Y')">Y</a></li>
+      <li><a href="#" onclick="showTopics('Z')">Z</a></li>
+      <li><a href="#" onclick="showAll()">All</a></li>
+    </ul>
+  </nav>
+
+  <section id="topics">
+    <div id="topic-container">
+      <p>Select a letter to view related health topics.</p>
+    </div>
+  </section>
+
+  <aside class="sidebar">
+    <h3>Symptom Checker</h3>
+    <p>Worried about your health?</p>
+    <button onclick="startSymptomCheck()">Start Your Symptom Check</button>
+    <hr>
+    <h3>Find a Health Service</h3>
+    <button onclick="nearby()">nearby</button>
+  </aside>
+</body>
+</html>

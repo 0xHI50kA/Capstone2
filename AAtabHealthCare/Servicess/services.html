@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Services</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #2c3e50;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* header {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 20px;
+        } */
+
+        h1 {
+            margin: 0;
+        }
+
+        /* Back Button Styles */
+        /* .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 5px 15px;
+            background-color: #ddd;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .back-button:hover {
+            background-color: #bbb;
+        } */
+
+        /* Card Styles */
+        .card-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        /* .top-card {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        } */
+
+        .bottom-cards {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+            padding: 20px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            color: #007BFF;
+        }
+
+        p {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #555;
+        }
+    </style>
+    <!--=========== BOOTSRAP LINK START =============-->
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!--
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">-->
+    <!--=========== BOOTSRAP LINK END =============-->
+  <!--=========== MY CSS LINK START =============-->
+  
+      <link rel="stylesheet" type="text/css" href="css/index1.css">
+      
+  <!--=========== MY CSS LINK END =============-->
+  
+      <!--============ FONT AWESOME CSS LINK START ============-->
+  
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link rel="stylesheet" href="css/styles.css">
+  
+  <!--============ FONT AWESOME CSS LINK END ============-->
+</head>
+<body>
+    <!-- <a href="index.html" class="back-button" onclick="goBack()">Back</a> -->
+    
+        <button style="
+        position: absolute;
+    padding: 10px 20px; 
+    margin-top: 90px;
+    background-color: #6c757d; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 16px;
+    transition: background-color 0.2s ease; margin-left: 40px;
+  " onclick="window.location.href='/index.html#services'">← Back</button>
+
+    <header class="headin">
+
+
+    </header>
+    
+    
+    <main >
+        <p style="color: #0061ff; font-size: 30px; margin-top:90px ; text-align: center;">Services</p>
+        
+        <!-- <div class="card-container">
+            <div class="top-card">
+                <div class="card" id="healthcare-card" onclick="navigateTo('about.html')">
+                    <img src="healthcare-icon.png" alt="Healthcare Center" class="card-img">
+                    <h2>Healthcare Center</h2>
+                    <p>Comprehensive health services including mental wellness and fitness programs.</p>
+                </div>
+            </div> -->
+            <div class="bottom-cards">
+                <div class="card" id="medical-card" onclick="navigateTo('immunisation.html')">
+                    <img src="images/immuniseBg.png" alt="Medical" class="card-img">
+                    <p style="color: #0061ff; font-size: 30px;">Infant Immunization</p>
+                    <p>Explore medical services including general consultations and diagnostics.</p>
+                </div>
+                <div class="card" id="dental-card" onclick="navigateTo('Familyplanning.html')">
+                    <img src="images/pharmacy/checkup.jpg" alt="Dental" class="card-img">
+                    <p style="color: #0061ff; font-size: 30px;">Family Planing</p>
+                    <p>Access oral health care services such as checkups, cleaning, and surgery.</p>
+                </div>
+                <div class="card" id="pharmacy-card" onclick="navigateTo('TBdots.html')">
+                    <img src="images/pharmacy/TB.png" alt="Pharmacy" class="card-img">
+                    <p style="color: #0061ff; font-size: 30px;">TB DOTS</p>
+                    <p>Find medications and health products for your needs.</p>
+                </div>
+                <div class="card" id="pharmacy-card" onclick="navigateTo('Generalconsult.html')">
+                    <img src="images/antenat.png" alt="Pharmacy" class="card-img">
+                    <p style="color: #0061ff; font-size: 30px;">General Consultation</p>
+                    <p>Find medications and health products for your needs.</p>
+                </div>
+               <div class="card" id="pharmacy-card" onclick="navigateTo('Prenatal.html')">
+                    <img src="images/pharmacy/Pharmacy.jpg" alt="Pharmacy" class="card-img">
+                    <p style="color: #0061ff; font-size: 30px;">Pre-Natal, Post-Partum and New Born Check-ups</p>
+                    <p>Find medications and health products for your needs.</p>
+                </div>
+                <div class="card" id="pharmacy-card" onclick="navigateTo('Breastscreening.html')">
+                    <img src="images/pharmacy/Pharmacy.jpg" alt="Pharmacy" class="card-img">
+                    <p style="color: #0061ff; font-size: 30px;">Breast Screening</p>
+                    <p>Find medications and health products for your needs.</p>
+                </div> 
+                <div class="card" id="pharmacy-card" onclick="navigateTo('Dentalcheckup.html')">
+                    <img src="images/pharmacy/Pharmacy.jpg" alt="Pharmacy" class="card-img">
+                    <p style="color: #0061ff; font-size: 30px;">Dental Check up</p>
+                    <p>Find medications and health products for your needs.</p>
+                </div> 
+                <div class="card" id="pharmacy-card" onclick="navigateTo('Homevisit.html')">
+                    <img src="images/pharmacy/Pharmacy.jpg" alt="Pharmacy" class="card-img">
+                    <p style="color: #0061ff; font-size: 30px;">Home Visit</p>
+                    <p>Find medications and health products for your needs.</p>
+                </div> 
+            </div>
+        </div>
+    </main>
+    <script>
+        // Function to navigate to the specific HTML page
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+
+        // Function to go back to the previous page
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+    <script type="text/javascript" src="js/header.js"></script>
+</body>
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>AI Symptom Checker - Fever Chatbot</title>
+    <style>
+              body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        .typing-indicator .dot {
+    animation: blink 1.5s infinite;
+}
+
+        h1 {
+            color: #007BFF;
+            text-align: center;
+        }
+
+        #chatbot {
+            background-color: #f1f1f1;
+            border-radius: 10px;
+            padding: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .bot-message, .user-message {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 8px;
+            max-width: 80%;
+        }
+
+        .bot-message {
+            background-color: #007BFF;
+            color: white;
+            text-align: left;
+        }
+
+        .user-message {
+            background-color: #e2e2e2;
+            text-align: right;
+        }
+
+        input[type="number"], input[type="text"], input[type="checkbox"] {
+            margin: 10px 0;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #restartButton {
+            background-color: #28a745;
+        }
+
+        #restartButton:hover {
+            background-color: #218838;
+        }
+
+        .yes-no-btn {
+            margin-right: 10px;
+        }
+
+        #homeButton {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #homeButton:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>AI Symptom Checker - Chatbot</h1>
+
+    <div id="chatbot"></div>
+    <button id="homeButton"> Home</button>
+
+    <script>
+        
+        const homeButton = document.getElementById('homeButton');
+      homeButton.onclick = function () {
+          window.location.href = '../index.html'; // Redirect to index.html
+      };
+      
+      const OPENROUTER_API_KEY = "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";
+      const YOUR_SITE_URL = "your-site-url"; 
+      const YOUR_SITE_NAME = "your-site-name"; 
+
+      let userInfo = {
+          age: null,
+          sex: null,
+          symptoms: null,
+          step: 1, // Tracks the conversation stage
+      };
+
+      let symptomDetails = [];
+      const chatbotDiv = document.getElementById("chatbot");
+
+      // Function to display bot message
+      function displayBotMessage(message) {
+          const botMessageDiv = document.createElement("div");
+          botMessageDiv.className = "bot-message";
+          botMessageDiv.textContent = message;
+          chatbotDiv.appendChild(botMessageDiv);
+      }
+
+      // Function to display user message
+      function displayUserMessage(message) {
+          const userMessageDiv = document.createElement("div");
+          userMessageDiv.className = "user-message";
+          userMessageDiv.textContent = message;
+          chatbotDiv.appendChild(userMessageDiv);
+      }
+
+      // Start the chatbot conversation
+      function startChatbot() {
+          displayBotMessage("Hello! I am your AI Symptom Checker. I will ask you some questions to understand your symptoms better.");
+          askAge();
+      }
+
+      // Ask for the user's age
+      function askAge() {
+    displayBotMessage("How old are you?");
+    
+    const input = document.createElement("input");
+    input.type = "number";
+    input.placeholder = "Enter your age";
+    input.required = true;
+    
+    const button = document.createElement("button");
+    button.textContent = "Submit";
+    
+    button.onclick = function () {
+        const age = parseInt(input.value);
+        
+        if (isNaN(age) || age <= 0) {
+            displayBotMessage("Please enter a valid age.");
+            return;
+        }
+        
+        if (age < 18) {
+            displayBotMessage(
+                "Sorry, you need to be 18 or older to use this AI Symptom Checker. " +
+                "Please ask a parent or guardian for assistance."
+            );
+            
+            setTimeout(() => {
+                window.history.back(); // Redirect to the previous HTML page
+            }, 3000); // Wait 3 seconds before redirecting
+            return;
+        }
+        
+        userInfo.age = age;
+        displayUserMessage(userInfo.age);
+        chatbotDiv.removeChild(input);
+        chatbotDiv.removeChild(button);
+        askSex();
+    };
+
+    chatbotDiv.appendChild(input);
+    chatbotDiv.appendChild(button);
+}
+
+
+      // Ask for the user's sex
+      function askSex() {
+  displayBotMessage("What is your sex? (Male/Female/Other)");
+
+  // Create buttons for each choice
+  const maleButton = document.createElement("button");
+  maleButton.textContent = "Male";
+  maleButton.className = "decision-button";
+  maleButton.onclick = function () {
+      userInfo.sex = "Male";
+      displayUserMessage(userInfo.sex);
+      cleanupButtons();
+      askSymptoms();
+  };
+
+  const femaleButton = document.createElement("button");
+  femaleButton.textContent = "Female";
+  femaleButton.className = "decision-button";
+  femaleButton.onclick = function () {
+      userInfo.sex = "Female";
+      displayUserMessage(userInfo.sex);
+      cleanupButtons();
+      askSymptoms();
+  };
+
+
+  // Append the buttons to the chatbot
+  chatbotDiv.appendChild(maleButton);
+  chatbotDiv.appendChild(femaleButton);
+
+
+  // Cleanup function to remove buttons after selection
+  function cleanupButtons() {
+      chatbotDiv.removeChild(maleButton);
+      chatbotDiv.removeChild(femaleButton);
+
+  }
+}
+
+function askSymptoms() {
+  displayBotMessage("What symptoms are you feeling? Please select one from the options below:");
+
+  // Create a dropdown for symptoms
+  const select = document.createElement("select");
+  select.required = true;
+
+  // Add default option
+  const defaultOption = document.createElement("option");
+  defaultOption.value = "";
+  defaultOption.textContent = "Select a symptom";
+  defaultOption.disabled = true;
+  defaultOption.selected = true;
+  select.appendChild(defaultOption);
+
+  // Add symptom options
+  const symptomsOptions = ["Cough", "Fever", "High Blood", "Others"];
+  symptomsOptions.forEach((symptom) => {
+      const option = document.createElement("option");
+      option.value = symptom;
+      option.textContent = symptom;
+      select.appendChild(option);
+  });
+
+  // Create a submit button
+  const button = document.createElement("button");
+  button.textContent = "Submit";
+  button.onclick = function () {
+      const selectedSymptom = select.value;
+      if (!selectedSymptom) {
+          displayBotMessage("Please select a symptom from the dropdown.");
+          return;
+      }
+      userInfo.symptoms = selectedSymptom;
+      displayUserMessage(userInfo.symptoms);
+      chatbotDiv.removeChild(select);
+      chatbotDiv.removeChild(button);
+      askSymptomQuestions();
+  };
+
+  // Append dropdown and button to chatbot
+  chatbotDiv.appendChild(select);
+  chatbotDiv.appendChild(button);
+}
+
+
+      // Ask detailed questions based on the symptoms
+      function askSymptomQuestions() {
+          displayBotMessage("I will now ask you 10 questions to better understand your symptoms.");
+          const questions = [
+              "How long have you had these symptoms? (Enter in days)",
+              "Have you experienced any fever? ",
+              "Do you have difficulty breathing?",
+              "Do you have chest pain?",
+              "Have you been coughing persistently?",
+              "Do you feel extremely fatigued?",
+              "Do you have a headache?",
+              "Have you had nausea or vomiting?",
+              "Is there any swelling or pain in your joints?",
+              "Have you recently been exposed to someone who is sick?"
+          ];
+          askYesNoQuestion(questions, 0);
+      }
+
+      // Ask each Yes/No question one by one
+     // Ask each question one by one
+function askYesNoQuestion(questions, index) {
+  if (index < questions.length) {
+      if (index === 0) { // First question asks for days in input format
+          displayBotMessage(questions[index]);
+
+          const input = document.createElement("input");
+          input.type = "number";
+          input.placeholder = "Enter number of days";
+          input.required = true;
+
+          const button = document.createElement("button");
+          button.textContent = "Submit";
+          button.onclick = function () {
+              const days = parseInt(input.value);
+              if (isNaN(days) || days < 0) {
+                  displayBotMessage("Please enter a valid number of days.");
+                  return;
+              }
+              symptomDetails.push(`${days} days`);
+              displayUserMessage(`${days} days`);
+              chatbotDiv.removeChild(input);
+              chatbotDiv.removeChild(button);
+              askYesNoQuestion(questions, index + 1);
+          };
+
+          chatbotDiv.appendChild(input);
+          chatbotDiv.appendChild(button);
+      } else {
+          displayBotMessage(questions[index]);
+
+          const yesButton = document.createElement("button");
+          yesButton.className = "yes-no-btn";
+          yesButton.textContent = "Yes";
+          yesButton.onclick = function () {
+              symptomDetails.push("Yes");
+              displayUserMessage("Yes");
+              chatbotDiv.removeChild(yesButton);
+              chatbotDiv.removeChild(noButton);
+              askYesNoQuestion(questions, index + 1);
+          };
+
+          const noButton = document.createElement("button");
+          noButton.className = "yes-no-btn";
+          noButton.textContent = "No";
+          noButton.onclick = function () {
+              symptomDetails.push("No");
+              displayUserMessage("No");
+              chatbotDiv.removeChild(yesButton);
+              chatbotDiv.removeChild(noButton);
+              askYesNoQuestion(questions, index + 1);
+          };
+
+          chatbotDiv.appendChild(yesButton);
+          chatbotDiv.appendChild(noButton);
+      }
+  } else {
+      analyzeSymptoms();
+  }
+}
+
+      // Analyze the symptoms and send data to OpenRouter
+      async function analyzeSymptoms() {
+          const botMessage = "Thank you for your responses! I will now analyze your information.";
+          displayBotMessage(botMessage);
+          
+          const botResponse = await getAIResponse();
+          displayBotMessage(botResponse);
+          displayRestartButton();
+      }
+
+      // Function to send user data to OpenRouter API
+      async function getAIResponse() {
+  const url = "https://openrouter.ai/api/v1/chat/completions";
+  const payload = {
+      model: "mistralai/mixtral-8x7b-instruct",
+      messages: [
+          {
+              role: "user",
+              content: `The patient is a ${userInfo.age}-year-old ${userInfo.sex} experiencing the following symptoms: ${userInfo.symptoms}. Additional details include: ${symptomDetails.join(", ")}. Based on this information, provide a detailed assessment of the possible conditions or causes for the symptoms, and suggest initial steps or advice for managing the situation . just say AS YOUR AI SYMPTOM CHECKER . . . and also promt only the good sugestion . end with if symptoms persist consult your doctor`
+          },
+      ],
+  };
+
+  try {
+      const response = await fetch(url, {
+          method: "POST",
+          headers: {
+              "Authorization": `Bearer ${OPENROUTER_API_KEY}`,
+              "HTTP-Referer": YOUR_SITE_URL,
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify(payload)
+      });
+
+      const data = await response.json();
+      return data.choices[0].message.content || "Unable to provide a response.";
+  } catch (error) {
+      console.error("Error fetching response:", error);
+      return "Sorry, something went wrong. Please try again later.";
+  }
+}
+
+
+      // Display the restart button to start over
+      function displayRestartButton() {
+          const restartButton = document.createElement("button");
+          restartButton.id = "restartButton";
+          restartButton.textContent = "Restart Chat";
+          restartButton.onclick = function () {
+              chatbotDiv.innerHTML = "";
+              userInfo = {
+                  age: null,
+                  sex: null,
+                  symptoms: null,
+                  step: 1,
+              };
+              symptomDetails = [];
+              startChatbot();
+          };
+
+          chatbotDiv.appendChild(restartButton);
+      }
+
+      // Start the chatbot
+      startChatbot();
+  </script> 
+ 
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Symptom Checker</title>
+    <link rel="stylesheet" href="AiHeader.css">
+       	<!--============ FONT AWESOME CSS LINK START ============-->
+
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="stylesheet" href="css/styles.css">
+ 
+        <!--============ FONT AWESOME CSS LINK END ============-->
+</head>
+<body>
+    <button style="
+    position: absolute;
+padding: 10px 20px; 
+margin-top: 90px;
+background-color: #6c757d; 
+color: white; 
+border: none; 
+border-radius: 5px; 
+cursor: pointer; 
+font-size: 16px;
+transition: background-color 0.2s ease; margin-left: 40px;
+" onclick="window.location.href='AboutAI.html'">← Back</button>
+    <header>
+        <div class="logo">
+            <a href="index.html"><i class="fa-solid fa-notes-medical"></i>SymptoAid</a>
+        </div>
+        <h1>AI Symptom Checker</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Terms of Service</h2>
+            <div class="card">
+                <p>Before using the symptom assessment, please accept the Terms of Service and Privacy Policy. Please note the following:</p>
+                <ul>
+                    <li>The result provided by the AI Symptom Checker is not a diagnosis. It is intended for informational purposes only and should not be considered a substitute for a professional medical opinion.</li>
+                    <li>In case of a health emergency, do not use this tool. Immediately call your local emergency number or seek professional medical assistance.</li>
+                    <li>The AI Symptom Checker is intended for users 18 years and older. If you are under 18 and need assistance, please consult a parent, guardian, or healthcare professional for guidance.</li>
+                    <li>Your data is secure and will be handled according to strict privacy standards. The information you provide will not be shared or used for identification purposes, and it will be used solely for the purpose of improving the symptom assessment.</li>
+                </ul>
+            </div>
+        </section>
+        <section>
+            <div class="card">
+                <p id="terms-text">
+                    I have read and accept the <a id="terms-link">Terms of Service</a>.<br>
+                    I agree that my health information may be used for the purpose of the symptom interview, as outlined in the <a id="policy-link">Privacy Policy</a>.
+                </p>
+                <div id="user-selection">
+                    <button class="btn" id="accept-button">I Accept</button>
+                    <button class="btn" id="decline-button">I Decline</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Button elements
+        const acceptButton = document.getElementById("accept-button");
+        const declineButton = document.getElementById("decline-button");
+        const termsLink = document.getElementById("terms-link");
+        const policyLink = document.getElementById("policy-link");
+
+        // Event listeners for terms and policy links
+        termsLink.addEventListener("click", () => {
+            alert("Terms of Service:\n\nBy using this tool, you agree to the terms that the results are for informational purposes only and not a professional diagnosis. For emergencies, seek immediate medical attention.");
+        });
+
+        policyLink.addEventListener("click", () => {
+            alert("Privacy Policy:\n\nYour data will remain confidential and secure. It will not be shared or used for identification purposes and will only be used to improve this tool.");
+        });
+
+        // Handle Accept button click
+        acceptButton.addEventListener("click", () => {
+            // Redirect to the AI symptom checker page
+            window.location.href = "forwhom.html";
+        });
+
+        // Handle Decline button click
+        declineButton.addEventListener("click", () => {
+            // Redirect to the home page
+            window.location.href = "../index.html";
+        });
+    </script>
+</body>
+</html>

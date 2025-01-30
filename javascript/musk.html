@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Active Navbar</title>
+  <style>
+    /* General styling */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.links {
+  background-color: #333;
+  padding: 10px 20px;
+}
+
+.links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.links li {
+  margin: 0 15px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+/* Default hover effect */
+.nav-link:hover {
+  color: #00bcd4;
+}
+
+/* Active link styling */
+.nav-link:focus,
+.nav-link:active {
+  color: #00bcd4;
+  font-weight: bold;
+}
+
+/* For the current page in hash-based navigation */
+.nav-link[href="index.html"] {
+  font-weight: bold;
+  color: #00bcd4;
+}
+
+  </style>
+</head>
+<body>
+  <nav class="links">
+    <ul>
+      <li><a href="index.html" class="nav-link" id="home">Home</a></li>
+      <li><a href="./messenger/Event.html" class="nav-link" id="events">Events</a></li>
+      <li><a href="services.html" class="nav-link" id="services">Services</a></li>
+      <li><a href="./messenger/AboutAI.html" class="nav-link" id="symptom-checker">Symptom Checker</a></li>
+      <li><a href="nearby.html" class="nav-link" id="nearby">Nearby Healthcare</a></li>
+      <li><a href="../atabs_Health_Care/Admin2/news-report.php" class="nav-link" id="news">News</a></li>
+    </ul>
+  </nav>
+</body>
+</html>

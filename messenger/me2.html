@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Symptom Selector</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f9f9f9;
+      /* display: flex; */
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* Container Styles */
+    .container {
+      margin: auto;
+      width: 50%;
+      margin-top: 50px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      max-width: 400px;
+      text-align: center;
+      width: 100%;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    /* Dropdown Menu */
+    select {
+      width: 80%;
+      padding: 10px;
+      margin: 15px 0;
+      border: 1px solid #aaa;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    /* Button Style */
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #2b7de2;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #004080;
+    }
+
+    /* Message Section */
+    p {
+      margin-top: 15px;
+      color: #555;
+      font-size: 1rem;
+    }
+  </style>
+   <link rel="stylesheet" href="AiHeader.css">
+   <!--============ FONT AWESOME CSS LINK START ============-->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="css/styles.css">
+
+   <!--============ FONT AWESOME CSS LINK END ============-->
+</head>
+<body>
+  <button style="
+    position: absolute;
+padding: 10px 20px; 
+margin-top: 90px;
+background-color: #6c757d; 
+color: white; 
+border: none; 
+border-radius: 5px; 
+cursor: pointer; 
+font-size: 16px;
+transition: background-color 0.2s ease; margin-left: 40px;
+" onclick="window.location.href='me1.html'">← Back</button>
+  <header>
+    <div class="logo">
+        <a href="index.html"><i class="fa-solid fa-notes-medical"></i>SymptoAid</a>
+    </div>
+    <h2>AI Symptom Checker</h2>
+</header>
+  <div class="container">
+    <h1>Select Your Symptoms</h1>
+    <select id="symptomDropdown">
+      <option value="" disabled selected>Select a symptom</option>
+      <option value="Cough">Cough</option>
+      <option value="Fatigue">Fatigue</option>
+      <option value="Fever">Fever</option>
+      <option value="Headache">Headache</option>
+      <option value="High Blood Pressure">High Blood Pressure</option>
+      <option value="Muscle Pain">Muscle Pain</option>
+      <option value="Nausea">Nausea & Vomiting</option>
+      <option value="Shortness of Breath">Shortness of Breath</option>
+      <option value="Sore Throat">Sore Throat</option>
+      <option value="Weight Loss">Weight Loss</option>
+    </select>
+    <br />
+    <button onclick="redirectToChecker()">Submit</button>
+    <p id="resultMessage"></p>
+  </div>
+
+  <script>
+    function redirectToChecker() {
+      const symptomDropdown = document.getElementById('symptomDropdown');
+      const selectedSymptom = symptomDropdown.value;
+      const message = document.getElementById('resultMessage');
+
+      if (!selectedSymptom) {
+        message.textContent = 'Please select a symptom to proceed.';
+        message.style.color = 'red';
+      } else {
+        message.textContent = `Redirecting to Symptom AI Checker for: ${selectedSymptom}...`;
+        message.style.color = 'green';
+
+        // Map selected symptom to corresponding AI page
+        let redirectUrl = '';
+        switch (selectedSymptom) {
+          case 'Cough':
+            redirectUrl = 'cough-ai.html';
+            break;
+          case 'Fatigue':
+            redirectUrl = 'fatigue-ai.html';
+            break;
+          case 'Fever':
+            redirectUrl = 'fever-ai.html';
+            break;
+          case 'Headache':
+            redirectUrl = 'headache-ai.html';
+            break;
+          case 'High Blood Pressure':
+            redirectUrl = 'highblood-ai.html';
+            break;
+          case 'Muscle Pain':
+            redirectUrl = 'musclepain-ai.html';
+            break;
+          case 'Nausea':
+            redirectUrl = 'nausea-ai.html';
+            break;
+          case 'Shortness of Breath':
+            redirectUrl = 'shortness-ai.html';
+            break;
+          case 'Sore Throat':
+            redirectUrl = 'sorethroat-ai.html';
+            break;
+          case 'Weight Loss':
+            redirectUrl = 'weightloss-ai.html';
+            break;
+          default:
+            redirectUrl = 'index.html';
+            break;
+        }
+
+        // Redirect after 1.5 seconds
+        setTimeout(() => {
+          window.location.href = redirectUrl;
+        }, 1500);
+      }
+    }
+  </script>
+</body>
+
+</html>

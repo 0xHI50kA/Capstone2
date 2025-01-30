@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Headache Symptoms Checker</title>
+  <style>
+    /* General Reset */
+    /* * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    } */
+
+ 
+    /* Main container */
+    .main-container {
+      margin: auto;
+      width: 50%;
+            /* margin-top: 50px; */
+      background: white;
+      /* width: 450px; */
+      height: 500px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      /* display: flex; */
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 10px;
+    }
+
+    /* Header */
+    /* header {
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      color: #333;
+      margin-bottom: 15px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 8px;
+    } */
+
+    /* Chatbox */
+    #chatbox {
+      flex-grow: 1;
+      height: 70%;
+      border: 1px solid #ddd;
+      overflow-y: auto;
+      padding: 15px;
+      background-color: #f8f9fa;
+      font-size: 15px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+    }
+
+    /* Typing indicator */
+    #botTyping {
+      color: gray;
+      font-style: italic;
+      margin-bottom: 5px;
+      height: 20px;
+      text-align: center;
+    }
+
+    /* Button Container */
+    #buttonContainer {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    /* Buttons */
+    .response-button {
+      font-size: 15px;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .yes-button {
+      background-color: #4caf50;
+      color: white;
+    }
+
+    .no-button {
+      background-color: #f44336;
+      color: white;
+    }
+
+    .response-button:hover {
+      opacity: 0.9;
+    }
+  </style>
+   <link rel="stylesheet" href="AiHeader.css">
+   <!--=========== MY CSS LINK START =============-->
+ 
+   <link rel="stylesheet" type="text/css" href="index3.css">
+     
+   <!--=========== MY CSS LINK END =============-->
+   <!--============ FONT AWESOME CSS LINK START ============-->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="css/styles.css">
+
+   <!--============ FONT AWESOME CSS LINK END ============-->
+</head>
+
+<body>
+  <button style="
+  position: absolute;
+padding: 10px 20px; 
+margin-top: 90px;
+background-color: #6c757d; 
+color: white; 
+border: none; 
+border-radius: 5px; 
+cursor: pointer; 
+font-size: 16px;
+transition: background-color 0.2s ease; margin-left: 40px;
+" onclick="window.location.href='me2.html'">← Back</button>
+  <!-- <header>
+    <div class="logo">
+        <a href="index.html"><i class="fa-solid fa-notes-medical"></i>SymptoAid</a>
+    </div>
+    <h2>AI Symptom Checker</h2>
+</header> -->
+
+<header class="headin">
+
+
+</header>
+  <!-- Main UI Structure -->
+  <div class="main-container">
+    <!-- Header -->
+    <div style="text-align: center;"><i class="fa-solid fa-robot fa-2x"></i></div>
+
+    <!-- Typing indicator -->
+    <div id="botTyping"></div>
+
+    <!-- Chatbox Area -->
+    <div id="chatbox"></div>
+
+    <!-- Response Buttons -->
+    <div id="buttonContainer"></div>
+  </div>
+
+  <script>
+    let questionIndex = 0;
+    const questions = [
+      "Do you experience frequent headaches at least 3 times a week?",
+      "Do you feel pain in a specific area of your head (e.g., temples or the back of the head)?",
+      "Is your headache accompanied by nausea or vomiting?",
+      "Do you experience sensitivity to light or sound during your headache episodes?",
+      "Do you feel a sudden severe headache that worsens quickly?",
+      "Have you noticed headaches following stress or anxiety?",
+      "Do you experience headaches after prolonged periods of screen time or fatigue?",
+      "Is your headache pain pulsating or throbbing in nature?",
+      "Do you experience headaches that worsen with sudden physical activity?",
+      "Have you had any recent head injuries or trauma associated with headaches?"
+    ];
+
+    let lastAnswer = null; // Track the last response
+
+    // Display bot's message
+    function displayMessage(message, isBot = true) {
+      const chatbox = document.getElementById("chatbox");
+      const msgDiv = document.createElement("div");
+      msgDiv.textContent = message;
+      msgDiv.style.marginBottom = "10px";
+
+      if (isBot) {
+        msgDiv.style.color = "#2b7de2"; // Bot's text in blue
+      } else {
+        msgDiv.style.color = "#333"; // User's text in black
+      }
+      chatbox.appendChild(msgDiv);
+
+      // Scroll to the bottom
+      chatbox.scrollTop = chatbox.scrollHeight;
+    }
+
+    // Simulate bot typing
+    function showBotTyping() {
+      const typingDiv = document.getElementById("botTyping");
+      typingDiv.textContent = "Bot is typing...";
+      setTimeout(() => {
+        typingDiv.textContent = "";
+      }, 1000);
+    }
+
+    // Render Yes/No buttons
+    function renderResponseButtons() {
+      const buttonContainer = document.getElementById("buttonContainer");
+      buttonContainer.innerHTML = "";
+
+      const yesButton = document.createElement("button");
+      yesButton.textContent = "Yes";
+      yesButton.classList.add("response-button", "yes-button");
+      yesButton.onclick = () => handleResponse("Yes");
+
+      const noButton = document.createElement("button");
+      noButton.textContent = "No";
+      noButton.classList.add("response-button", "no-button");
+      noButton.onclick = () => handleResponse("No");
+
+      buttonContainer.appendChild(yesButton);
+      buttonContainer.appendChild(noButton);
+    }
+
+    function handleResponse(response) {
+      displayMessage(`You: ${response}`, false);
+      lastAnswer = response; // Track the user's response
+
+      showBotTyping();
+      setTimeout(() => {
+        if (questionIndex < questions.length - 1) {
+          questionIndex++;
+          displayMessage(questions[questionIndex]);
+          renderResponseButtons();
+        } else {
+          displayMessage("Analyzing your responses...");
+          setTimeout(() => {
+            if (lastAnswer === "Yes") {
+              window.location.href = "resulth2.html"; 
+            } else {
+              window.location.href = "resulth1.html"; 
+            }
+          }, 3000);
+        }
+      }, 1000);
+    }
+
+    // Simulate initial bot messages and render buttons
+    window.onload = () => {
+      showBotTyping();
+      setTimeout(() => {
+        displayMessage(
+          "Hello, I am your AI Symptom Checker. I'll ask you a few questions to analyze your headache symptoms."
+        );
+
+        setTimeout(() => {
+          displayMessage("If you're ready, let's start with the first question:");
+          setTimeout(() => {
+            displayMessage(questions[questionIndex]);
+            renderResponseButtons();
+          }, 1000);
+        }, 1500);
+      }, 1000);
+    };
+  </script>
+  <script type="text/javascript" src="AiHeader.js"></script>
+</body>
+
+</html>

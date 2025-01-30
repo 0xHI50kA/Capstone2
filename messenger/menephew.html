@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nephew Age Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f8ff;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        input[type="number"] {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #backButton {
+            background-color: #FF0000;
+            margin-top: 15px;
+            color: white;
+        }
+        p {
+            font-size: 1rem;
+            color: #555;
+            margin-top: 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="AiHeader.css">
+    <!--============ FONT AWESOME CSS LINK START ============-->
+ 
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ <link rel="stylesheet" href="css/styles.css">
+ 
+</head>
+<body>
+    <div class="container">
+        <h1>How Old is Your Nephew?</h1>
+        <input type="number" id="ageInput" placeholder="Enter your nephew's age" />
+        <br />
+        <button onclick="checkAge()" id="submitButton">Submit</button>
+        <div id="backDiv" style="display:none;">
+            <button onclick="goBack()" id="backButton">Back to Home</button>
+        </div>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function checkAge() {
+            const age = parseInt(document.getElementById("ageInput").value);
+            const message = document.getElementById("message");
+            const submitButton = document.getElementById("submitButton");
+            const backDiv = document.getElementById("backDiv");
+
+            if (!age && age !== 0) {
+                message.textContent = "Please enter your nephew's age.";
+                return;
+            }
+
+            if (age < 4) {
+                // Valid case for nephews under 4 years
+                submitButton.style.display = "none";
+                backDiv.style.display = "block";
+
+                message.textContent = 
+                    "Your nephew is eligible for early childhood health assessments. Please seek pediatric consultation if needed.";
+                message.style.color = "red";
+            } else {
+                // Invalid input or nephew is older
+                message.textContent = 
+                    "Your nephew is older than the eligible range for early health checks.";
+                message.style.color = "green";
+
+                setTimeout(() => {
+                    window.location.href = "menephew2.html";
+                }, 2000);
+            }
+        }
+
+        function goBack() {
+            window.location.href = "../index.html";
+        }
+    </script>
+</body>
+</html>
