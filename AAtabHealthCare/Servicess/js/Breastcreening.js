@@ -1,10 +1,9 @@
 let servicesPageContent = [
     {
-        immHeading: 'Family Planning, Senior Consultation, Breast And Cervical Screening ',
+        immHeading: 'Breast And Cervical Screening ',
         immContent: `We provide comprehensive services to support your well-being:
 
-<br>👶 Family Planning - Offering personalized advice for informed reproductive health decisions.
-<br>👵 Senior Consultations - Addressing age-related health concerns and promoting a vibrant, active lifestyle for elderly individuals.
+
 <br>👩‍⚕️ Breast & Cervical Screening - Essential for early detection and prevention, ensuring long-term health and peace of mind.
 <br>📆 When: Every Tuesday and Friday
 <br>⏰ Time: 8:00 AM - 12:00 NN

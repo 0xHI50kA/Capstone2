@@ -9,7 +9,7 @@ We're here to support your family's health and well-being Ensuring your little o
 <br>✅ No appointment needed!
 <br>
 Our friendly team is ready to care for your child’s health.`,
-        immImage: 'images/immuniseBg.png',
+        immImage: '../Images/immunization.jpg',
     },
     // {
     //     homeVisitHeading: 'HOME VISITATION (PM)',

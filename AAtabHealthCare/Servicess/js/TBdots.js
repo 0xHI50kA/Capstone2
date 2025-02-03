@@ -15,7 +15,7 @@ let servicesPageContent = [
 <br>✅ No appointment needed!
 <br>
 Together, we can end tuberculosis and build a healthier, stronger community.`,
-        homeVisitImage: 'images/pharmacy/TB.png',
+        homeVisitImage: '../Images/TB.png',
     },
 ];
 
@@ -49,7 +49,7 @@ function renderImmunisation() {
                 <p>${homeVisit.homeVisitContent}</p>
                  <a href="about.html" style="display: inline-block; padding: 10px 20px; color: white; background-color: #0078d7; text-decoration: none; border-radius: 5px; text-align: center;">Visit Us</a>
             </div>
-            <div class="immT col-lg-5 col-md-6 col-sm-12 animate">
+            <div class="immI col-lg-5 col-md-6 col-sm-12 animate">
                 <img src="${homeVisit.homeVisitImage}" class="img-fluid" alt="Home Visitation Image">
             </div>
         </div>
