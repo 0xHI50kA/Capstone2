@@ -1,18 +1,18 @@
 let servicesPageContent = [
     {
-        immHeading: 'Senior Consultation',
+        immHeading: 'Adolescense Consultation',
         immContent: `We provide comprehensive services to support your well-being:
 
-<br>👵 Senior Consultations - Addressing age-related health concerns and promoting a vibrant, active lifestyle for elderly individuals.
+<br>👵 Adolescense Consultations - Addressing age-related health concerns and promoting a vibrant, active lifestyle for elderly individuals.
 <br>
-<br>📆 <span style="color:black;font-weight:bold;">When:</span> Every Thursday
-<br>⏰<span style="color:black;font-weight:bold;">Time:</span> 8:00 AM - 12:00 NN
+<br>📆 <span style="color:black;font-weight:bold;">When:</span> Every Wednesday
+<br>⏰<span style="color:black;font-weight:bold;">Time:</span> 12:00 NN - 5:00 PM
 <br>
 <br>✅ No appointment needed!
 <br>
 <br>
 Your journey to health and peace of mind starts here. `,
-        immImage: '../Images/senior.jpg',
+        immImage: '../Images/adolescence.jpg',
     },
     // {
     //     homeVisitHeading: 'Schedule Meetings and Assemblies (PM)',

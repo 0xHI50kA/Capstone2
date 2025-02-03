@@ -9,10 +9,12 @@ let servicesPageContent = [
         homeVisitContent: `Struggling with Tuberculosis (TB)? We’re Here to Help.
 
  DOTS (Directly Observed Therapy Shortcourse) offers the safest and most effective path toward a TB-free life. Our dedicated team is ready to support you every step of the way.
-
-<br>📆 When: Every Tuesday and Friday
-<br>⏰ Time: 12:00 NN - 5:00 PM
+<br>
+<br>📆 <span style="color:black;font-weight:bold;">When:</span> Every Tuesday and Friday
+<br>⏰<span style="color:black;font-weight:bold;">Time:</span> 12:00 NN - 5:00 PM
+<br>
 <br>✅ No appointment needed!
+<br>
 <br>
 Together, we can end tuberculosis and build a healthier, stronger community.`,
         homeVisitImage: '../Images/TB.png',
@@ -44,10 +46,10 @@ function renderImmunisation() {
         <div class="row imm">
             <div class="immT  col-lg-5 col-md-6 col-sm-12 animate">
                 <div class="topV">
-                    <p>${homeVisit.homeVisitHeading}</p>
+                    <p style="font-size: 40px;">${homeVisit.homeVisitHeading}</p>
                 </div>
-                <p>${homeVisit.homeVisitContent}</p>
-                 <a href="about.html" style="display: inline-block; padding: 10px 20px; color: white; background-color: #0078d7; text-decoration: none; border-radius: 5px; text-align: center;">Visit Us</a>
+                <p style="font-size: 25px;">${homeVisit.homeVisitContent}</p>
+                 <a href="../../about.html" style="display: inline-block; padding: 10px 20px; color: white; background-color: #0078d7; text-decoration: none; border-radius: 5px; text-align: center;">Visit Us</a>
             </div>
             <div class="immI col-lg-5 col-md-6 col-sm-12 animate">
                 <img src="${homeVisit.homeVisitImage}" class="img-fluid" alt="Home Visitation Image">
