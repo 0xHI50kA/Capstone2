@@ -8,6 +8,7 @@ function renderHeader(argument) {
 	<!--nav links-->
 	<div class="links">
 		<ul><li class="home1"><a href="../../index.html">Home</a></li> 
+		<li class="drop news"><a   href="../../Admin2/news-report.php">News</a> </i>
 			<li class="home5"><a href="../Eventss/Event1.html">Events</a></li>
 			<li class="home2"><a class="subnav" href="../Servicess/services.html">Services </a> </i>
 				
@@ -34,7 +35,7 @@ function renderHeader(argument) {
       </ul> -->
 			</li>
 
-			<li class="drop news"><a   href="../../Admin2/news-report.php">News</a> </i>
+		
     <!--  <ul class="subb">
 		<li><a href="../atabs_Health_Care/Admin2/news-report.php">Health News</a></li> -->
 

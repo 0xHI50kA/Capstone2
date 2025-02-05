@@ -41,12 +41,14 @@ transition: background-color 0.2s ease; margin-left: 40px;
 
 
     </header>
-    <main>
+    <main style="text-align: center;">
         <section>
             <h2>Who is the symptom checking for?</h2>
+            <br>
             <div class="card">
                 <p>Please select who will undergo the symptom check. Your selection will help customize the questions and suggestions:</p>
                 <div class="btn-container">
+                    <br>
                     <button class="btn" id="me-button">Me</button>
                     <button class="btn" id="nephew-button">Someone else</button>
                 </div>
@@ -61,12 +63,12 @@ transition: background-color 0.2s ease; margin-left: 40px;
 
         meButton.addEventListener("click", () => {
             // Redirect to the "Me" assessment page
-            window.location.href = "me2.html";
+            window.location.href = "me1.html";
         });
 
         nephewButton.addEventListener("click", () => {
             // Redirect to the "Nephew" assessment page
-            window.location.href = "menephew.html";
+            window.location.href = "me1.html";
         });
         function goBack() {
             window.location.href = "../index.html";

@@ -140,52 +140,56 @@ question.forEach(q => {
 
 
 //rendering footer on html page using javascript
-let footer = document.querySelector('.footer');
+// let footer = document.querySelector('.footer');
 
-function footerRendering() {
-	footer.innerHTML = `<div class="row foot ">
-		<div class="col-lg-4 col-md-4 col-sm-12 descrip">
-			<p class="descripMainH">SymptoAid</p>
-			<p >
-Atabs Health Center provides administrative support and clinical services to ensure quality healthcare for the community.</p>
+// function footerRendering() {
+// 	footer.innerHTML = `<div class="row foot ">
+// 		<div class="col-lg-4 col-md-4 col-sm-12 descrip">
+// 			<p class="descripMainH">SymptoAid</p>
+// 			<p >
+// Atabs Health Center provides administrative support and clinical services to ensure quality healthcare for the community.</p>
  
-		</div>
-		<div class="col-lg-4 col-md-4 col-sm-12 importantL">
-			<p>Important Links</p>
-			<div>
-				<a href="index.html">Home</a>
-				<a href="#services">Services</a>
-				<a href="#sympt">Symtom Checker</a>
-				<a href="#homeSection">Events</a>
-				<a href="#home">News</a>
-			</div>
+// 		</div>
+// 		<div class="col-lg-4 col-md-4 col-sm-12 importantL">
+// 			<p>Important Links</p>
+// 			<div>
+// 				<a href="index.html">Home</a>
+// 				<a href="#services">Services</a>
+// 				<a href="#sympt">Symtom Checker</a>
+// 				<a href="#homeSection">Events</a>
+// 				<a href="#home">News</a>
+// 			</div>
 
-		</div>
-		<div class="col-lg-4 col-md-4 col-sm-12 subscribe">
-			<p style="font-size:35px;">
-				CONTACT US
-			</p>
+// 		</div>
+// 		<div class="col-lg-4 col-md-4 col-sm-12 subscribe">
+// 			<p style="font-size:35px;">
+// 				CONTACT US
+// 			</p>
 			
-			<div>
-			<a href="https://www.facebook.com/profile.php?id=100068242016400" target="_blank" class="socIcon">
-                        <i class="fab fa-facebook" style="font-size: 34px; color: #3b5998;"></i>
-                    </a>
-                    <a href="https://www.facebook.com/messages/t/100241642270992" target="_blank" class="socIcon">
-                        <i class="fab fa-facebook-messenger" style="font-size: 34px; color: #0084ff;"></i>
-                    </a>
-			<!--	<form>
-				<input type="email" name="email" placeholder="Email Address" required>
-				<button type="submit" class="newsLBt">Subscribe Now</button> -->
-			</div> 
-		</div> 
-	</div>
-	<div class="dev text-center">Built for capstone project 1 By <span>Team Healix</span></a></div>
-	<div class="text-center copy">
-		<p>&copy; SymptoAid 2024 All Right Reserved.</p>
-	</div>`
-};
+// 			<div>
+// 			<a href="https://www.facebook.com/profile.php?id=100068242016400" target="_blank" class="socIcon">
+//                         <i class="fab fa-facebook" style="font-size: 34px; color: #3b5998;"></i>
+//                     </a>
+//                     <a href="https://www.facebook.com/messages/t/100241642270992" target="_blank" class="socIcon">
+//                         <i class="fab fa-facebook-messenger" style="font-size: 34px; color: #0084ff;"></i>
+//                     </a>
+// 			<!--	<form>
+// 				<input type="email" name="email" placeholder="Email Address" required>
+// 				<button type="submit" class="newsLBt">Subscribe Now</button> -->
+// 			</div> 
+// 		</div> 
+// 	</div>
+	
+// 	`
+// };
 
-footerRendering();
+ 
+	// <div class="dev text-center">Built for capstone project 1 By <span>Team Healix</span></a></div>
+	// <div class="text-center copy">
+	// 	<p>&copy; SymptoAid 2024 All Right Reserved.</p>
+	// </div>
+	
+// footerRendering();
 
 
 //Validating the book appointment form

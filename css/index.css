@@ -926,8 +926,8 @@ background: var(--blue);
 padding-top:35px ;
 }
 .faqImg div {
-	background: var(--light);
-	border-radius: 10px;
+	/* background: var(--light);
+	border-radius: 10px; */
 	position: relative;
 	max-width: 400px;
 
@@ -942,11 +942,11 @@ padding-top:35px ;
 /*============ FAQ CLASS END===========*/
 
 /*============ FOOTER START===========*/
-footer{
+/* footer{
 	background: var(--light);
 }
 .foot{
-	/* padding: 20px; */
+	padding: 20px;
 	height: auto;
 
 }
@@ -1008,7 +1008,7 @@ footer{
 	display: flex;
 	justify-content: center;
 	
-width: 100%;
+	width: 100%;
 	background: var(--white);
 	border:solid 2px var(--cloud);
 	padding: 15px;
@@ -1043,7 +1043,84 @@ font-size: 15px;
 .dev span{
 	font-weight: bold;
 	color: var(--dark);
+} */
+footer {
+    background: var(--light);
+	color: var(--dark);
+    padding: 30px 0;
+    text-align: center;
 }
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-logo h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.footer-links,
+.footer-contact,
+.footer-social {
+    margin: 15px 0;
+}
+
+.footer-links h3,
+.footer-contact h3,
+.footer-social h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin: 5px 0;
+}
+
+.footer-links ul li a {
+    color: var(--dark);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: var(--blue);
+}
+
+.footer-contact p {
+    margin: 5px 0;
+}
+
+.footer-contact i {
+    margin-right: 8px;
+}
+
+.footer-social a {
+    color: var(--dark);
+    font-size: 20px;
+    margin: 0 8px;
+    transition: 0.3s;
+}
+
+.footer-social a:hover {
+  color: var(--blue);
+}
+
+/* .footer-bottom {
+    background: #1a252f;
+    padding: 10px;
+    margin-top: 20px;
+} */
+
 /*============ FOOTER END===========*/
 
 /*======== RESPONSIVENESS ======*/
