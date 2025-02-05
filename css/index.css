@@ -1059,10 +1059,10 @@ footer {
     margin: auto;
 }
 
-.footer-logo h2 {
+/* .footer-logo h2 {
     font-size: 24px;
     margin-bottom: 5px;
-}
+} */
 
 .footer-links,
 .footer-contact,
@@ -1080,14 +1080,18 @@ footer {
 .footer-links ul {
     list-style: none;
     padding: 0;
+	
 }
 
 .footer-links ul li {
     margin: 5px 0;
+	
 }
 
 .footer-links ul li a {
-    color: var(--dark);
+	font-size: 15px;
+	color: var(--dark);
+	font-weight: bold;
     text-decoration: none;
     transition: 0.3s;
 }
