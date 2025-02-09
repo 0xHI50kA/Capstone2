@@ -14,13 +14,13 @@
     } */
 
     /* Body Style */
-    body {
+    /* body {
       font-family: Arial, sans-serif;
       background: #f4f4f9;
       color: #333;
       padding: 20px;
       line-height: 1.8;
-    }
+    } */
 
     /* Main container */
     .main-container {
@@ -57,7 +57,9 @@
     /* Suggestions Section */
     .suggestions {
       margin-top: 20px;
-      padding: 15px;
+      font-size: 20px;
+      text-align: center;
+      padding: 35px;
       background-color: #f9f9fc;
       border-radius: 5px;
       border: 1px solid #ddd;
@@ -94,6 +96,7 @@
     }
   </style>
    <link rel="stylesheet" href="AiHeader.css">
+   <link rel="stylesheet" type="text/css" href="index3.css">
    <!--============ FONT AWESOME CSS LINK START ============-->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -103,11 +106,14 @@
 </head>
 
 <body>
-  <header>
+  <!-- <header>
     <div class="logo">
         <a href="index.html"><i class="fa-solid fa-notes-medical"></i>SymptoAid</a>
     </div>
     <h2>AI Symptom Checker</h2>
+</header> -->
+<header class="headin">
+  
 </header>
   <div class="main-container">
     <div style="text-align: center;"><i class="fa-solid fa-robot fa-2x"></i></div>
@@ -123,13 +129,13 @@
       </ul>
 
       <div class="suggestions">
-        <p><strong>Recommended Actions to Alleviate Your Symptoms:</strong></p>
+        <h3 style="color: red;">WHAT TO DO NOW:</h3>
         <ul>
-          <li>Drink at least 8 glasses of water daily to prevent dehydration-related headaches.</li>
-          <li>Evaluate your current medication use; consult a healthcare provider if overuse is suspected.</li>
-          <li>Schedule a comprehensive eye exam to identify and correct potential vision problems.</li>
-          <li>Maintain consistent sleep schedules to prevent headaches caused by poor rest patterns.</li>
-          <li>Explore relaxation strategies, such as mindfulness or progressive muscle relaxation, to manage stress triggers.</li>
+          <li>⚕️Drink at least 8 glasses of water daily to prevent dehydration-related headaches.</li>
+          <li>⚕️Evaluate your current medication use; consult a healthcare provider if overuse is suspected.</li>
+          <li>⚕️Schedule a comprehensive eye exam to identify and correct potential vision problems.</li>
+          <li>⚕️Maintain consistent sleep schedules to prevent headaches caused by poor rest patterns.</li>
+          <li>⚕️Explore relaxation strategies, such as mindfulness or progressive muscle relaxation, to manage stress triggers.</li>
         </ul>
       </div>
 
@@ -138,13 +144,14 @@
         <button onclick="window.location.href='../nearby.html'">Nearby Healthcare</button>
       </div>
 
-      <p><strong>Important:</strong> If your headaches are frequent, severe, or accompanied by other unusual symptoms, seek immediate medical attention from a healthcare professional.</p>
+      <p> <h3 style="color: red;">IMPORTANT:</h3> If your headaches are frequent, severe, or accompanied by other unusual symptoms, seek immediate medical attention from a healthcare professional.</p>
     </div>
 
     <!-- <footer>
       <p>If symptoms persist, consult your doctor.</p>
     </footer> -->
   </div>
+  <script type="text/javascript" src="AiHeader.js"></script>
 </body>
 
 </html>

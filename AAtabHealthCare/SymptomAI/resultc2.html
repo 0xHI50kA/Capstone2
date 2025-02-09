@@ -14,13 +14,13 @@
     } */
 
     /* Body Style */
-    body {
+    /* body {
       font-family: Arial, sans-serif;
       background: #f4f4f9;
       color: #333;
       padding: 20px;
       line-height: 1.8;
-    }
+    } */
 
     /* Main container */
     .main-container {
@@ -70,12 +70,13 @@
     /* Suggestions Section */
     .suggestions {
       margin-top: 20px;
-      padding: 15px;
+      font-size: 20px;
+      text-align: center;
+      padding: 35px;
       background-color: #f9f9fc;
       border-radius: 5px;
       border: 1px solid #ddd;
     }
-
     /* Footer */
     footer {
       text-align: center;
@@ -95,6 +96,7 @@
     }
   </style>
    <link rel="stylesheet" href="AiHeader.css">
+   <link rel="stylesheet" type="text/css" href="index3.css">
    <!--============ FONT AWESOME CSS LINK START ============-->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -116,11 +118,14 @@ cursor: pointer;
 font-size: 16px;
 transition: background-color 0.2s ease; margin-left: 40px;
 " onclick="window.location.href='cough-ai.html'">← Back</button>
-  <header>
+  <!-- <header>
     <div class="logo">
         <a href="index.html"><i class="fa-solid fa-notes-medical"></i>SymptoAid</a>
     </div>
     <h2>AI Symptom Checker</h2>
+</header> -->
+<header class="headin">
+  
 </header>
   <div class="main-container">
     <div style="text-align: center;"><i class="fa-solid fa-robot fa-2x"></i></div>
@@ -133,13 +138,13 @@ transition: background-color 0.2s ease; margin-left: 40px;
       </ul>
 
       <div class="suggestions">
-        <p><strong>Recommended Actions:</strong></p>
+        <h3 style="color: red;">WHAT TO DO NOW:</h3>
         <ul>
-          <li>Avoid exposure to allergens (e.g., dust, pollen, smoke) that may trigger or worsen symptoms.</li>
-          <li>Ensure proper hydration to help relieve airway discomfort.</li>
-          <li>Practice controlled breathing techniques to ease shortness of breath.</li>
-          <li>Consider using an air purifier to improve indoor air quality.</li>
-          <li>Monitor your symptoms for changes or worsening conditions.</li>
+          <li>⚕️Avoid exposure to allergens (e.g., dust, pollen, smoke) that may trigger or worsen symptoms.</li>
+          <li>⚕️Ensure proper hydration to help relieve airway discomfort.</li>
+          <li>⚕️Practice controlled breathing techniques to ease shortness of breath.</li>
+          <li>⚕️Consider using an air purifier to improve indoor air quality.</li>
+          <li>⚕️Monitor your symptoms for changes or worsening conditions.</li>
         </ul>
       </div>
 
@@ -148,13 +153,14 @@ transition: background-color 0.2s ease; margin-left: 40px;
         <button onclick="window.location.href='../nearby.html'">Nearby Healthcare</button>
       </div>
 
-      <p><strong>Important:</strong> If symptoms persist, worsen, or new symptoms arise, consult a healthcare provider immediately for evaluation and treatment.</p>
+      <h3 style="color: red;">WHAT TO DO NOW:</h3><p> If symptoms persist, worsen, or new symptoms arise, consult a healthcare provider immediately for evaluation and treatment.</p>
     </div>
 <!-- 
     <footer>
       <p>If symptoms persist, consult your doctor.</p>
     </footer> -->
   </div>
+  <script type="text/javascript" src="AiHeader.js"></script>
 </body>
 
 </html>

@@ -14,13 +14,13 @@
     } */
 
     /* Body Style */
-    body {
+    /* body {
       font-family: Arial, sans-serif;
       background: #f4f4f9;
       color: #333;
       padding: 20px;
       line-height: 1.8;
-    }
+    } */
 
     /* Main container */
     .main-container {
@@ -57,12 +57,13 @@
     /* Suggestions Section */
     .suggestions {
       margin-top: 20px;
-      padding: 15px;
+      font-size: 20px;
+      text-align: center;
+      padding: 35px;
       background-color: #f9f9fc;
       border-radius: 5px;
       border: 1px solid #ddd;
     }
-
     /* Footer */
     footer {
       text-align: center;
@@ -94,6 +95,7 @@
     }
   </style>
    <link rel="stylesheet" href="AiHeader.css">
+   <link rel="stylesheet" type="text/css" href="index3.css">
    <!--============ FONT AWESOME CSS LINK START ============-->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -103,11 +105,14 @@
 </head>
 
 <body>
-  <header>
+  <!-- <header>
     <div class="logo">
         <a href="index.html"><i class="fa-solid fa-notes-medical"></i>SymptoAid</a>
     </div>
     <h2>AI Symptom Checker</h2>
+</header> -->
+<header class="headin">
+  
 </header>
   <div class="main-container">
     <div style="text-align: center;"><i class="fa-solid fa-robot fa-2x"></i></div>
@@ -123,12 +128,12 @@
       </ul>
 
       <div class="suggestions">
-        <p><strong>What you can do now:</strong></p>
+        <h3 style="color: red;">WHAT TO DO NOW:</h3>
         <ul>
-          <li>Stay hydrated by drinking plenty of water to reduce fever and maintain hydration.</li>
-          <li>Rest and avoid strenuous physical activity to give your body time to recover.</li>
-          <li>Use fever reducers such as acetaminophen or ibuprofen, but follow dosage instructions carefully.</li>
-          <li>Apply a cold compress to your forehead to help bring down your temperature.</li>
+          <li>⚕️Stay hydrated by drinking plenty of water to reduce fever and maintain hydration.</li>
+          <li>⚕️Rest and avoid strenuous physical activity to give your body time to recover.</li>
+          <li>⚕️Use fever reducers such as acetaminophen or ibuprofen, but follow dosage instructions carefully.</li>
+          <li>⚕️Apply a cold compress to your forehead to help bring down your temperature.</li>
         </ul>
       </div>
 
@@ -137,13 +142,14 @@
         <button onclick="window.location.href='../nearby.html'">Nearby Healthcare</button>
       </div>
 
-      <p><strong>Important:</strong> If your fever persists for more than 3 days, worsens, or is accompanied by other concerning symptoms, consult a healthcare provider immediately for further evaluation and treatment.</p>
+      <p> <h3 style="color: red;">IMPORTANT:</h3>If your fever persists for more than 3 days, worsens, or is accompanied by other concerning symptoms, consult a healthcare provider immediately for further evaluation and treatment.</p>
     </div>
 
     <!-- <footer>
       <p>If symptoms persist, consult your doctor.</p>
     </footer> -->
   </div>
+  <script type="text/javascript" src="AiHeader.js"></script>
 </body>
 
 </html>

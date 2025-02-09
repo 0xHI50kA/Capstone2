@@ -14,13 +14,13 @@
     } */
 
     /* Body Style */
-    body {
+    /* body {
       font-family: Arial, sans-serif;
       background: #f4f4f9;
       color: #333;
       padding: 20px;
       line-height: 1.8;
-    }
+    } */
 
     /* Main container */
     .main-container {
@@ -96,6 +96,7 @@
     }
   </style>
    <link rel="stylesheet" href="AiHeader.css">
+   <link rel="stylesheet" type="text/css" href="index3.css">
    <!--============ FONT AWESOME CSS LINK START ============-->
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -117,11 +118,8 @@ cursor: pointer;
 font-size: 16px;
 transition: background-color 0.2s ease; margin-left: 40px;
 " onclick="window.location.href='cough-ai.html'">← Back</button>
-  <header>
-    <div class="logo">
-        <a href="index.html"><i class="fa-solid fa-notes-medical"></i>SymptoAid</a>
-    </div>
-    <h2>AI Symptom Checker</h2>
+  <header class="headin">
+  
 </header>
   <div class="main-container">
     <div style="text-align: center;"><i class="fa-solid fa-robot fa-2x"></i></div>
@@ -138,25 +136,26 @@ transition: background-color 0.2s ease; margin-left: 40px;
       <div class="suggestions">
         <h3 style="color: red;">WHAT TO DO NOW:</h3>
         <ul>
-          <li>Avoid triggers such as dust, smoke, or strong odors that could worsen your symptoms.</li>
-          <li>Stay hydrated by drinking plenty of water to help thin mucus in your airways.</li>
-          <li>Use a humidifier to keep the air moist, which may reduce coughing and wheezing.</li>
-          <li>Take deep breaths or practice controlled breathing exercises to help ease shortness of breath.</li>
+          <li> ⚕️Avoid triggers such as dust, smoke, or strong odors that could worsen your symptoms.</li>
+          <li>⚕️Stay hydrated by drinking plenty of water to help thin mucus in your airways.</li>
+          <li>⚕️Use a humidifier to keep the air moist, which may reduce coughing and wheezing.</li>
+          <li>⚕️Take deep breaths or practice controlled breathing exercises to help ease shortness of breath.</li>
         </ul>
       </div>
 
-      <div class="button-container">
-        <button onclick="window.location.href='../index.html#sympt'">Back Home</button>
-        <button onclick="window.location.href='../nearby.html'">Nearby Healthcare</button>
-      </div>
+      <br>
 
       <h3 style="color: red;">IMPORTANT:</h3> <p>If your symptoms persist, worsen, or you develop additional concerns, consult a healthcare provider immediately for further evaluation and treatment.</p>
     </div>
-
+    <div class="button-container">
+      <button onclick="window.location.href='../index.html#sympt'">VISIT US</button>
+      <button onclick="window.location.href='../nearby.html'">Nearby Healthcare</button>
+    </div>
     <!-- <footer>
       <p>If symptoms persist, consult your doctor.</p>
     </footer> -->
   </div>
+  <script type="text/javascript" src="AiHeader.js"></script>
 </body>
 
 </html>
