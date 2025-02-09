@@ -55,6 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News Reports</title>
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
     <style>
         /* General Body Styles */
         body {
@@ -178,9 +179,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
     <!-- Header Section -->
-    <header>
-        News Management System
-    </header>
+    <header class="headin">
+
+
+</header>
 
     <!-- Main Content -->
     <main>

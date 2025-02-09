@@ -24,7 +24,8 @@ try {
 
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="../messenger/AiHeader.css">
+<!-- <link rel="stylesheet" href="../messenger/AiHeader.css"> -->
+<link rel="stylesheet" type="text/css" href="../css/index1.css">
     	<!--============ FONT AWESOME CSS LINK START ============-->
 
 	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -33,28 +34,25 @@ try {
         <!--============ FONT AWESOME CSS LINK END ============-->
 
 <head>
-<header>
-        <div class="logo">
-            <a href="index.html"><i class="fa-solid fa-notes-medical"></i>SymptoAid</a>
-        </div>
-        <h2>Health News</h2>
-    </header>
+    <!-- Header Section -->
+  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News Reports</title>
     <style>
         /* General body styles */
-        body {
+        /* body {
             font-family: 'Poppins', sans-serif;
-            /* background-color: #fdfdfd;
+            background-color: #fdfdfd;
             margin: 0;
-            padding: 10px; */
-        }
+            padding: 10px;
+        } */
 
         h2 {
             text-align: center;
             color: #333;
             font-size: 26px;
+            margin-top: 100px;
         }
 
         /* Back Button Styling */
@@ -205,8 +203,14 @@ border: none;
 border-radius: 5px; 
 cursor: pointer; 
 font-size: 16px;
-transition: background-color 0.2s ease; margin-left: 40px;
+transition: background-color 0.2s ease; margin-left: 40px;margin-top: 100px;
 " onclick="window.location.href='../index.html#mainpage'">← Back</button>
+
+           <!-- Header Section -->
+    <header class="headin">
+
+
+</header>
 
     <h2>Latest Health News From Atabs Health Care Center </h2>
     
@@ -246,6 +250,7 @@ transition: background-color 0.2s ease; margin-left: 40px;
             document.getElementById('newsModal').style.display = "none";
         }
     </script>
+    <script type="text/javascript" src="../javascript/header.js"></script>
 </body>
 
 </html>
