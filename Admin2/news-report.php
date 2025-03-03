@@ -30,7 +30,7 @@ try {
 
 	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
      <link rel="stylesheet" href="css/styles.css">
- 
+     <link rel="stylesheet" href="css/footer.css">
         <!--============ FONT AWESOME CSS LINK END ============-->
 
 <head>
@@ -79,7 +79,8 @@ try {
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
-            margin-top: 20px;
+            margin-top: 40px;
+            margin-bottom: 40px;
         }
 
         .news-item {
@@ -227,7 +228,56 @@ transition: background-color 0.2s ease; margin-left: 40px;margin-top: 100px;
             <p>No news reports found.</p>
         <?php endif; ?>
     </div>
+    <footer>
+    <div class="footer-container">
+        <div class="footer-logo">
+            <p style="font-weight: bold;font-size: 25px; color: #0061ff; ">SymptoAid</p>
+            <p>SymptoAid is your reliable health companion, providing accurate symptom checks and essential medical guidance. Visit us at Teodora Alonzo Street for more information and healthcare support.</p>
+        </div>
 
+        <div class="footer-links">
+            <p style="font-weight: bold;font-size: 25px;">Quick Links</p>
+            <ul>
+                <li ><a href="../index.html">Home</a></li>
+                <li ><a href="/atabs_Health_Care/Admin2/news-report.php">News</a></li>
+                <li ><a href="../AAtabHealthCare/Eventss/Event1.html">Events</a></li>
+                <li ><a href="../AAtabHealthCare/Servicess/services.html">Services</a></li>
+				<li ><a href="../AAtabHealthCare/SymptomAI/AboutAI.html">Symptom Checker</a></li>
+				<li ><a href="../nearby.html">Nearby Healthcare</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-contact">
+            <p style="font-weight: bold;font-size: 25px;">Contact Us</p>
+			<br>
+			<p  style="font-size: 20px;"><i class="fas fa-envelope"></i> atabhc2019@gmail.com</p>
+            <p style="font-size: 20px;"><i class="fas fa-phone" ></i> +4209087 </p>
+			
+            <p  style="font-size: 20px;"><i class="fas fa-map-marker-alt"></i> Circumferential Road,Baguio City</p>
+        </div>
+
+        <div class="footer-social">
+            <p style="font-weight: bold;font-size: 25px;">Follow Us</p>
+            <a href="#" style="font-size: 35px;"><i class="fab fa-facebook"></i></a>
+            <!-- <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a> -->
+			<br>
+			<p style="font-weight: bold;font-size: 25px;">Send Us Message</p>
+			<a href="" style="font-size: 35px;">
+				<i class="fab fa-facebook-messenger"></i>
+			</a>
+			
+			<!-- Email Icon -->
+			<a href="mailto:your-email@example.com" style="font-size: 35px;">
+				<i class="fas fa-envelope"></i>
+			</a>
+        </div>
+    </div>
+
+    <!-- <div class="footer-bottom">
+        <p>&copy; 2024 Health Center. All rights reserved.</p>
+    </div> -->
+</footer>
     <!-- Modal for newspaper-like reading -->
     <div class="modal" id="newsModal">
         <button class="close-btn" onclick="closeModal()">Close</button>
@@ -250,7 +300,7 @@ transition: background-color 0.2s ease; margin-left: 40px;margin-top: 100px;
             document.getElementById('newsModal').style.display = "none";
         }
     </script>
-    <script type="text/javascript" src="../javascript/header.js"></script>
+    <script type="text/javascript" src="../javascript/header1.js"></script>
 </body>
 
 </html>

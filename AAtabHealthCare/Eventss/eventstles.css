@@ -441,6 +441,7 @@ height: 100vh;
 	display: block;
 	color: var(--dark);
 	margin: 20px 0;
+	margin-left: 33px;
 	font-size: 20px;
 }
 .cont a{

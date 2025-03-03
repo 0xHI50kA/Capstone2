@@ -20,13 +20,7 @@
     
     <!--============ FONT AWESOME CSS LINK END ============-->
     <style>
-        /* body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            padding: 0;
-            background-color: #f4f4f4;
-        } */
+       
         .container {
             text-align: center;
             max-width: 800px;
@@ -36,11 +30,13 @@
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-       img{
+        img{
         float: right;
+        border-radius: 15px;
         margin-right: 50px;
         margin-left: 50px;
        }
+       
         p {
             color: #555;
         }
@@ -50,6 +46,13 @@
             border-left: 5px solid #ffcc00;
             margin: 10px 0;
         }
+        @media(max-width: 768px){
+            img {
+            float: none ;
+        }
+
+    }
+    
     </style>
 </head>
 <body>
@@ -190,5 +193,6 @@
 </footer>
 
     <script type="text/javascript" src="../HTheader.js"></script>
+    <script type="text/javascript" src="../HTindex.js"></script>
 </body>
 </html>

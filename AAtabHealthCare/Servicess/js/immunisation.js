@@ -38,7 +38,7 @@ function renderImmunisation() {
 
             </div>
             <div class="immI col-lg-5 col-md-6 col-sm-12 animate">
-                <img src="${immunisation.immImage}" class="img-fluid" alt="Immunisation Image">
+                <img src="${immunisation.immImage}" class="img-fluid" style="width: 500px; height: 400px;  border-radius:20px;" alt="Immunisation Image">
             </div>
         </div>
     </div>`;
