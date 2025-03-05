@@ -358,7 +358,8 @@ Atab District Health Centers provide essential health services, including Family
 		<div class="col-lg-4 col-md-6  faqImg" data-aos="fade-up" data-aos-duration="1000">
 		<div class=" ">
 			
-				<img src="./AAtabHealthCare/Images/faq.jpg" class=""> 
+				<img src="./AAtabHealthCare/Images/faq.jpg" style="display: block; margin: 0 auto; max-width: 100%; height: auto;">
+
 		
 		</div>
 	</div>
@@ -424,5 +425,26 @@ Atab District Health Centers provide essential health services, including Family
 
 <script type="text/javascript" src="javascript/header.js"></script>
 <script type="text/javascript" src="javascript/index.js"></script>
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+    const questions = document.querySelectorAll(".question");
+
+    questions.forEach(question => {
+        question.addEventListener("click", function() {
+            const answer = this.nextElementSibling;
+            const plus = this.querySelector(".plus");
+            
+            if (answer.style.display === "block") {
+                answer.style.display = "none";
+                plus.textContent = "+";
+            } else {
+                answer.style.display = "block";
+                plus.textContent = "-";
+            }
+        });
+    });
+});
+
+</script>
 </body>
 </html>
