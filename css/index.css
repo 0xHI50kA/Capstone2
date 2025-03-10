@@ -1070,9 +1070,9 @@ footer {
     margin: 15px 0;
 }
 
-.footer-links h3,
-.footer-contact h3,
-.footer-social h3 {
+.footer-links p,
+.footer-contact p,
+.footer-social p {
     font-size: 18px;
     margin-bottom: 10px;
 }
@@ -1091,8 +1091,9 @@ footer {
 .footer-links ul li a {
 	font-size: 15px;
 	color: var(--dark);
-	font-weight: bold;
+	/* font-weight: bold; */
     text-decoration: none;
+	font-size: 20px;
     transition: 0.3s;
 }
 
@@ -1100,12 +1101,10 @@ footer {
     color: var(--blue);
 }
 
-.footer-contact p {
-    margin: 5px 0;
-}
 
 .footer-contact i {
     margin-right: 8px;
+	font-size: 20px;
 }
 
 .footer-social a {
@@ -1118,7 +1117,9 @@ footer {
 .footer-social a:hover {
   color: var(--blue);
 }
+.footheader{
 
+}
 /* .footer-bottom {
     background: #1a252f;
     padding: 10px;
@@ -1246,4 +1247,51 @@ height: 100vh;
 	left: 30%;*/
 }
 
+.footer-container {
+	grid-template-columns: 1fr; /* Stack elements vertically */
+	text-align: center;
+	gap: 15px;
+	padding: 20px;
+}
+
+.footer-logo h2 {
+	font-size: 22px;
+}
+
+.footer-links p,
+.footer-contact p,
+.footer-social p {
+	font-size: 16px;
+}
+
+.footer-links ul li a {
+	font-size: 18px;
+}
+
+.footer-contact i {
+	font-size: 18px;
+}
+
+.footer-social a {
+	font-size: 18px;
+}
+
+.subscribe form input {
+	font-size: 18px;
+	padding: 12px;
+}
+
+.subscribe form button {
+	font-size: 14px;
+	padding: 8px;
+}
+
+.copy p {
+	font-size: 15px;
+	margin: 10px;
+}
+
+.dev a {
+	font-size: 14px;
+}
 }

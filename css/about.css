@@ -60,6 +60,10 @@
 .abtSoc{
 	margin: 20px 0;
 }
+a{
+	
+    text-decoration: none;
+}
 .abtSoc i{
 	font-size: 30px;
 	margin: 5px;
