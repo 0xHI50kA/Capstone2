@@ -216,6 +216,7 @@ header{
 
 .bars{
 	
+	height: 70px;
 	display: none;
 	align-self: flex-start;
 	
@@ -224,7 +225,7 @@ header{
 	border-radius: 5px;
 	padding: 5px;
 	background: var(--dark);
-	font-size: 30px;
+	font-size: 24px;
 	top: 0;
 	color: var(--light);
 	font-weight: 800;
@@ -401,8 +402,10 @@ footer {
 .footer-social a {
     color: var(--dark);
     font-size: 20px;
-    margin: 0 8px;
+   
+	text-align: center;
     transition: 0.3s;
+	text-decoration: none;
 }
 
 .footer-social a:hover {
@@ -416,6 +419,30 @@ footer {
     padding: 10px;
     margin-top: 20px;
 } */
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--blue);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.back-to-top:hover {
+    background: var(--dark);
+}
+
+.back-to-top.show {
+    display: block;
+}
+
 
 /*============ FOOTER END===========*/
 
@@ -461,6 +488,7 @@ height: 100vh;
 	display: block;
 	position: relative;
 	z-index: 2;
+	margin-bottom: 0px;
 }
 .logo a{
 	font-size: 20px;
@@ -469,22 +497,50 @@ height: 100vh;
 .ac{
 	font-size: 15px;
 }
-#close{
-	display: none;
+/* Hide Close Button Initially */
+#close {
+    display: none; 
 }
-#open{
-	font-size: 20px;
+
+/* Open Button Styles */
+#open {
+    font-size: 24px;
+    background: var(--light);
+
+    color: var(--dark);
+
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
 }
-#open:hover{
-	background: var(--light);
-	border: solid 2px var(--dark);
-	color: var(--dark);
+
+/* Hover Effect for Open Button */
+#open:hover {
+    background: darkgray;
 }
-#close:hover{
-	background: var(--light);
-	border: solid 2px var(--dark);
-	color: var(--dark);
+
+/* Close Button Styles (Initially Hidden) */
+#close {
+    font-size: 24px;
+    background: red;
+
+    color: white;
+
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
 }
+
+/* Hover Effect for Close Button */
+#close:hover {
+    background: darkred;
+}
+
+/* Toggle Open/Close Buttons Using JavaScript */
+.hidden {
+    display: none;
+}
+
 
 .well{
 	font-size: 30px;
@@ -566,6 +622,7 @@ height: 100vh;
 
 .footer-social a {
 	font-size: 18px;
+	
 }
 
 .subscribe form input {

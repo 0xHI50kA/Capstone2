@@ -57,9 +57,9 @@ function renderHeader(argument) {
 </div>
 	
 	<div class="bars">
-		<i id="open" class="fa-solid fa-bars"></i>
-		<i id="close" class="fa-regular fa-x"></i>
-	</div>`;
+    <i id="open" class="menu-icon">☰</i> <!-- Open Button (Hamburger) -->
+    <i id="close" class="menu-icon">✖</i> <!-- Close Button (X) -->
+</div>`;
 };
 
 renderHeader();

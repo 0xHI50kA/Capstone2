@@ -91,7 +91,7 @@
         }
 
         .card-img {
-            width: 80px;
+            width: 150px;
             height: 150px;
             margin-bottom: 15px;
         }
@@ -106,12 +106,7 @@
             color: #555;
         }
     </style>
-    <!--=========== BOOTSRAP LINK START =============-->
-
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <!--
-          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">-->
-    <!--=========== BOOTSRAP LINK END =============-->
+  
   <!--=========== MY CSS LINK START =============-->
   
       <link rel="stylesheet" type="text/css" href="css/index1.css">
@@ -128,18 +123,18 @@
 <body>
     <!-- <a href="index.html" class="back-button" onclick="goBack()">Back</a> -->
     
-        <button style="
-        position: absolute;
-    padding: 10px 20px; 
-    margin-top: 90px;
-    background-color: #6c757d; 
-    color: white; 
-    border: none; 
-    border-radius: 5px; 
-    cursor: pointer; 
-    font-size: 16px;
-    transition: background-color 0.2s ease; margin-left: 40px;
-  " onclick="window.location.href='/index.html#services'">← Back</button>
+    <button style="
+    position: absolute;
+padding: 10px 20px; 
+margin-top: 90px;
+background-color: #6c757d; 
+color: white; 
+border: none; 
+border-radius: 5px; 
+cursor: pointer; 
+font-size: 16px;
+transition: background-color 0.2s ease; margin-left: 40px;
+" onclick="window.location.href='/index.html#services'">← Back</button>
 
     <header class="headin">
 
@@ -197,7 +192,7 @@
                 
                 <div class="card" id="pharmacy-card" onclick="navigateTo('Breastscreening.html')">
                     <img src="../Images/breast.jpg" alt="Pharmacy" class="card-img">
-                    <p style="color: black; font-size: 30px;">Breast & Servical Cancer Screening</p>
+                    <p style="color: black; font-size: 30px;">Breast & Cervical Cancer Screening</p>
                     <!-- <p>Find medications and health products for your needs.</p> -->
                 </div> 
                 <div class="card" id="pharmacy-card" onclick="navigateTo('adolescent.html')">
@@ -251,7 +246,10 @@
             <a href="#"><i class="fab fa-instagram"></i></a> -->
 			<br>
 			<p class="footheader" style="font-weight: bold;font-size: 25px;">Reference</p>
-			<img src="/AAtabHealthCare/HealthTopics/images/DOH.png" alt="" style="border-radius: 110px; width: 80px; height: 80px;">
+			<a href="https://doh.gov.ph" >Department of Health</a>
+			<br>
+			<a href="https://www.who.int/" >World Health Organization</a>
+			
 			
 			
 			
@@ -260,8 +258,9 @@
 				<i class="fas fa-envelope"></i>
 			</a> -->
         </div>
+		
     </div>
-
+	<button id="backToTop"   class="back-to-top">↑ </button>
     <!-- <div class="footer-bottom">
         <p>&copy; 2024 Health Center. All rights reserved.</p>
     </div> -->

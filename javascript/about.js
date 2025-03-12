@@ -2,7 +2,7 @@ let aboutPage = document.querySelector('.about');
 
 let about = {
     abt: 'Atabs Health Care Center',
-    firstP: `Here At Atab Healthcare, We are dedicated to providing comprehensive and compassionate medical services tailored to support your overall well-being. The doctors from our clinics have always endeavoured to provide the highest quality of service with professionalism and compassion. With the wide range of special areas of interest, expertise, and skills among the medical staff at our clinics, you will find all your healthcare needs will be well managed. All the staff believe in holistic management of each individual, encompassing mental, physical, and emotional health.`,
+    firstP: `Here at Atab Health Center, we are dedicated to providing comprehensive and compassionate medical care tailored to support your overall well-being. Our doctor is committed to delivering the highest quality of service with professionalism and care. With expertise in various medical fields, we ensure that your healthcare needs are well managed with a patient-centered approach.`,
     contact: `(074) 420 9087 | atabhc2019@gmail.com`,
     schedule: {
         openTime: '07:45',
@@ -30,17 +30,13 @@ let renderAbout = () => {
 
         <!-- Main About Section -->
         <div class="row abtt animate">
-        <div class="back-btn-container">
-            <button class="btn btn-secondary" onclick="goBack()">
-                &larr; Back
-            </button>
-        </div>
+       
             <div class="col-sm-12 col-md-12 col-lg-6">
             
-                <p class="abtHead">${about.abt}</p>
-                <p class="abtDes">${about.firstP}</p>
-                <p class="abtContact">Contact: ${about.contact}</p>
-                <p class="abtSchedule">
+                <p  style="font-size: 20px; class="abtHead">${about.abt}</p>
+                <p  style="font-size: 20px;  class="abtDes">${about.firstP}</p>
+                <p   style="font-size: 20px; class="abtContact">Contact: ${about.contact}</p>
+                <p  style="font-size: 20px; class="abtSchedule">
                     Operating Hours: 7:45 AM - 5:00 PM <br> 
                     Current Status: ${getBusinessStatus()}
                 </p>

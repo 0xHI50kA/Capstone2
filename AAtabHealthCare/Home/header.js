@@ -3,14 +3,14 @@ let header = document.querySelector('.headin');
 function renderHeader(argument) {
 	header.innerHTML = `<!--logo-->
 	<div class="logo">
-		<a href="../../index.html"><i class="fa-solid fa-notes-medical"></i> SymptoAid</a>
+		<a href="index.html"><i class="fa-solid fa-notes-medical"></i> SymptoAid</a>
 	</div>
 	<!--nav links-->
 	<div class="links">
-		<ul> <li><a href="../../index.html">Home</a></li> 
-		<li class="drop news"><a   href="../../Admin2/news-report.php">News</a> </i>
-			<li><a href="../Eventss/Event1.html">Events</a></li>
-			<li class="home2"><a class="subnav" href="services.html">Services </a> </i>
+		<ul> <li class="home1"><a href="index.html">Home</a></li> 
+		<li class="home2" ><a   href="../atabs_Health_Care/Admin2/news-report.php">News</a> </i>
+			<li><a href="https://atabcalendar.netlify.app/">Events</a></li>
+			<li ><a class="subnav" href="AAtabHealthCare/Servicess/services.html">Services </a> </i>
 				<!-- <ul class="drp">
 					<li><a href="Immunisation.html">Immunization</a></li>
 					<li><a href="Surgery.html">Consultations</a></li>
@@ -24,9 +24,9 @@ function renderHeader(argument) {
 				</ul> -->
 				
 				</li> 
-				<li><a href="../SymptomAI/AboutAI.html">Symptom checker</a></li>
+				<li><a href="AAtabHealthCare/SymptomAI/AboutAI.html">Symptom checker</a></li>
 				
-			<li class="drop abt"><a class="subnav" href="../../nearby.html">Nearby Healthcare</a></i>
+			<li class="home3"  class="drop abt" ><a class="subnav" href="nearby.html">Nearby Healthcare</a></i>
     <!--  <ul class="sub">
 		<li><a href="Doctors.html"></a></li>
 		<li><a href="Nurses.html"></a></li>

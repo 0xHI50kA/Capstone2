@@ -10,7 +10,7 @@
   <!--=========== BOOTSRAP LINK END =============-->
 <!--=========== MY CSS LINK START =============-->
 
-	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<link rel="stylesheet" type="text/css" href="index.css">
 	
 <!--=========== MY CSS LINK END =============-->
 
@@ -67,7 +67,7 @@
 </div>
 <div class="dc col-lg-4 col-md-6 col-sm-12 animate" data-aos="fade-up" data-aos-duration="1000">
 <div class=" img container-fluid">
-		<img src="images/pharmacy/Station1.png" class="">
+		<img src="Station1.png" class="">
 	</div>
 	<div class="serve">
 			<i class="fa-solid fa-hospital"></i>
@@ -263,7 +263,7 @@ Family planning helps individuals achieve their desired family size and pregnanc
 
 	<div class="aptImg col-sm-12 col-lg-5 col-md-6 animate" data-aos="fade-up" data-aos-duration="1000">
 		<div class="aptImage">
-			<img src="images/pharmacy/runny.png">
+			<img src="runny.png">
 		</div>
   <span class="f">
 
@@ -302,7 +302,7 @@ Family planning helps individuals achieve their desired family size and pregnanc
 <div class="about row" id="target">
 	<div class="abtImg col-sm-12 col-lg-5 col-md-6 animate" data-aos="fade-up" data-aos-duration="1000">
 		<div class="abtImage">
-			<img src="images/pharmacy/Station1.png"  >
+			<img src="Station1.png"  >
 		</div>
   <span class="group">
 		<span class="phy"><span >Atab</span> <br>Health care</span>
@@ -378,7 +378,7 @@ Atab District Health Centers provide essential health services, including Family
             <ul>
                 <!-- <li ><a href="../../index.html">Home</a></li> -->
                 <li ><a href="../atabs_Health_Care/Admin2/news-report.php">News</a></li>
-                <li ><a href="../AAtabHealthCare/Eventss/Event1.html">Events</a></li>
+                <li ><a href="https://atabcalendar.netlify.app/">Events</a></li>
                 <!-- <li ><a href="../AAtabHealthCare/Servicess/services.html">Services</a></li> -->
 				<li ><a href="../AAtabHealthCare/SymptomAI/AboutAI.html">Symptom Checker</a></li>
 				<li ><a href="nearby.html">Nearby Healthcare</a></li>
@@ -425,26 +425,23 @@ Atab District Health Centers provide essential health services, including Family
 <!--================= FOOTER END ==================-->
 
 
-<script type="text/javascript" src="javascript/header.js"></script>
-<script type="text/javascript" src="javascript/index.js"></script>
+<script type="text/javascript" src="header.js"></script>
+<script type="text/javascript" src="index.js"></script>
 <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            var backToTopButton = document.getElementById("backToTop");
-        
-            // Show/hide the button on scroll
-            window.onscroll = function () {
-                if (document.documentElement.scrollTop > 300) {
-                    backToTopButton.classList.add("show");
-                } else {
-                    backToTopButton.classList.remove("show");
-                }
-            };
-        
-            // Scroll smoothly to the top when clicked
-            backToTopButton.addEventListener("click", function () {
-                window.scrollTo({ top: 0, behavior: "smooth" });
-            });
-        });
+
+document.addEventListener("DOMContentLoaded", function () {
+    var backToTopButton = document.getElementById("backToTop");
+
+    window.onscroll = function () {
+        if (document.documentElement.scrollTop > 300) {
+            backToTopButton.classList.add("show");
+        } else {
+            backToTopButton.classList.remove("show");
+        }
+    };
+onclick="window.location.href='index.html#home'"
+
+});
 
 // FAQ Accordion
 	document.addEventListener("DOMContentLoaded", function() {
