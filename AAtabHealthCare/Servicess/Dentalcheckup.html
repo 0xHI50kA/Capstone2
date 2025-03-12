@@ -137,5 +137,24 @@
 <script type="text/javascript" src="js/header.js"></script>
 <script type="text/javascript" src="js/Dentalcheckup.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		var backToTopButton = document.getElementById("backToTop");
+	
+		// Show/hide the button on scroll
+		window.onscroll = function () {
+			if (document.documentElement.scrollTop > 300) {
+				backToTopButton.classList.add("show");
+			} else {
+				backToTopButton.classList.remove("show");
+			}
+		};
+	
+		// Scroll smoothly to the top when clicked
+		backToTopButton.addEventListener("click", function () {
+			window.scrollTo({ top: 0, behavior: "smooth" });
+		});
+	});
+	</script>
 </body>
 </html>
