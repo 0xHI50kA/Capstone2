@@ -45,7 +45,7 @@
 
     /* Content */
     .content {
-      font-size: 18px;
+      font-size: 20px;
       margin-top: 20px;
     }
 
@@ -139,12 +139,12 @@
         </ul>
       </div>
 
-      <div class="button-container">
-        <button onclick="window.location.href='../index.html#sympt'">Back Home</button>
-        <button onclick="window.location.href='../nearby.html'">Nearby Healthcare</button>
-      </div>
+  
 
-      <p><strong>Important:</strong> If your symptoms persist, worsen, or you experience severe dehydration, consult a healthcare provider immediately for further evaluation and treatment.</p>
+      <h3  style="color: red;">IMPORTANT:</h3> <p class="note" >If your symptoms persist, worsen, or new concerns arise, we strongly recommend seeking immediate medical attention. You can contact us through Facebook, Messenger, or Gmail using the details below, or visit Atab Health Center for further evaluation and treatment.</p>
+      <div class="button-container">
+        <button onclick="window.location.href='../index.html#sympt'">Visit Us</button>
+      </div>
     </div>
 
     <!-- <footer>
@@ -181,31 +181,54 @@
       </div>
 
       <div class="footer-social">
-          <p class="footheader" style="font-weight: bold;font-size: 25px;">Follow Us</p>
-          <a href="https://web.facebook.com/atab.healthcenter" style="font-size: 35px; color: #3b5998;"><i class="fab fa-facebook"></i></a>
-    <a href="https://web.facebook.com/messages/t/100068026195085" style="font-size: 35px;color: #0084ff;"><i class="fab fa-facebook-messenger"></i></a>
-          <!-- <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a> -->
-    <br>
-    <p class="footheader" style="font-weight: bold;font-size: 25px;">Reference</p>
-    <img src="/AAtabHealthCare/HealthTopics/images/DOH.png" alt="" style="border-radius: 110px; width: 80px; height: 80px;">
-    
-    
-    
-    <!-- Email Icon -->
-    <!-- <a href="" style="font-size: 35px;">
-      <i class="fas fa-envelope"></i>
-    </a> -->
-      </div>
-  </div>
+        <p class="footheader" style="font-weight: bold;font-size: 25px;">Follow Us</p>
+        <a href="https://web.facebook.com/atab.healthcenter" style="font-size: 35px; color: #3b5998;"><i class="fab fa-facebook"></i></a>
+  <a href="https://web.facebook.com/messages/t/100068026195085" style="font-size: 35px;color: #0084ff;"><i class="fab fa-facebook-messenger"></i></a>
+        <!-- <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a> -->
+  <br>
+  <p class="footheader" style="font-weight: bold;font-size: 25px;">Reference</p>
+  <a href="https://doh.gov.ph" >Department of Health</a>
+  <br>
+  <a href="https://www.who.int/" >World Health Organization</a>
+  
+  
+  
+  
+  <!-- Email Icon -->
+  <!-- <a href="" style="font-size: 35px;">
+    <i class="fas fa-envelope"></i>
+  </a> -->
+    </div>
 
-  <!-- <div class="footer-bottom">
-      <p>&copy; 2024 Health Center. All rights reserved.</p>
-  </div> -->
+</div>
+<button id="backToTop"   class="back-to-top">↑ </button>
+<!-- <div class="footer-bottom">
+    <p>&copy; 2024 Health Center. All rights reserved.</p>
+</div> -->
 </footer>
-
 <!--================= FOOTER END ==================-->
   <script type="text/javascript" src="AiHeader.js"></script>
+  <script type="text/javascript" src="AiIndex.js"></script>
+     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var backToTopButton = document.getElementById("backToTop");
+        
+            // Show/hide the button on scroll
+            window.onscroll = function () {
+                if (document.documentElement.scrollTop > 300) {
+                    backToTopButton.classList.add("show");
+                } else {
+                    backToTopButton.classList.remove("show");
+                }
+            };
+        
+            // Scroll smoothly to the top when clicked
+            backToTopButton.addEventListener("click", function () {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+        });
+        </script>
 </body>
 
 </html>

@@ -17,7 +17,97 @@
  
         <!--============ FONT AWESOME CSS LINK END ============-->
         <style>
-            
+ .terms-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 18px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.cardss {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9; /* Light background */
+}
+/* Ensure consistent checkbox size */
+.terms-list input[type="checkbox"] {
+    width: 16px;  /* Standard checkbox size */
+    height: 16px;
+    margin-right: 8px; /* Add space between checkbox and text */
+    vertical-align: middle; /* Align properly with text */
+    cursor: pointer; /* Make it clickable */
+}
+
+/* Style for list items */
+.terms-list li {
+    display: flex;
+    align-items: center; /* Ensures everything is aligned */
+    gap: 10px; /* Add spacing between checkbox and text */
+    font-size: 16px; /* Ensures uniform text size */
+}
+
+
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+#user-selection {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.btn {
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.btn-decline {
+    background-color: #dc3545;
+}
+
+.btn-decline:hover {
+    background-color: #b02a37;
+}
+
+@media (max-width: 768px) {
+    .terms-container {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    #user-selection {
+        flex-direction: column;
+    }
+}
+
         </style>
 </head>
 <body>
@@ -43,32 +133,42 @@ transition: background-color 0.2s ease; margin-left: 40px;
 
 
     </header>
-    <main >
-        <section>
-            <h2 style="text-align: center;">Terms of Service</h2>
-            <div class="card">
-                <p>Before using the symptom assessment, please accept the Terms of Service and Privacy Policy. Please note the following:</p>
-                <ul>
-                    <li>The result provided by the AI Symptom Checker is not a diagnosis. It is intended for informational purposes only and should not be considered a substitute for a professional medical opinion.</li>
-                    <li>In case of a health emergency, do not use this tool. Immediately call your local emergency number or seek professional medical assistance.</li>
-                    <li>The AI Symptom Checker is intended for users 18 years and older. If you are under 18 and need assistance, please consult a parent, guardian, or healthcare professional for guidance.</li>
-                    <li>Your data is secure and will be handled according to strict privacy standards. The information you provide will not be shared or used for identification purposes, and it will be used solely for the purpose of improving the symptom assessment.</li>
-                </ul>
-            </div>
-        </section>
-        <section>
-            <div class="card">
-                <p id="terms-text">
-                    I have read and accept the <a id="terms-link">Terms of Service</a>.<br>
-                    I agree that my health information may be used for the purpose of the symptom interview, as outlined in the <a id="policy-link">Privacy Policy</a>.
-                </p>
-                <div id="user-selection">
-                    <button class="btn" id="accept-button">Accept</button>
-                    <button class="btn" id="decline-button">Decline</button>
+    <div class="terms-container">
+        <main>
+            <section>
+                <h2 class="text-center">Terms of Service</h2>
+                <div class="cardss">
+                    <p>Before using the symptom assessment, please accept the Terms of Service and Privacy Policy. Please note the following:</p>
+                    <ul>
+                        <li>&#11044; The result provided by the AI Symptom Checker is not a diagnosis. It is intended for informational purposes only and should not be considered a substitute for a professional medical opinion.</li>
+                        <li>&#11044; In case of a health emergency, do not use this tool. Immediately call your local emergency number or seek professional medical assistance.</li>
+                        <li>&#11044; The AI Symptom Checker is intended for users 18 years and older. If you are under 18 and need assistance, please consult a parent, guardian, or healthcare professional for guidance.</li>
+                        <li>&#11044; Your data is secure and will be handled according to strict privacy standards. The information you provide will not be shared or used for identification purposes, and it will be used solely for the purpose of improving the symptom assessment.</li>
+                    </ul>
                 </div>
-            </div>
-        </section>
-    </main>
+            </section>
+            <section>
+                <div class="cardss">
+                    <p>Please review and accept the following:</p>
+                    <div class="terms-list">
+                        <p>
+                            <input type="checkbox" id="terms-checkbox">
+                            I have read and accept the <a href="#" id="terms-link">Terms of Service</a>.
+                        </p>
+                        <p>
+                            <input type="checkbox" id="privacy-checkbox">
+                            I agree that my health information may be used for the purpose of the symptom interview, as outlined in the 
+                            <a href="#" id="policy-link">Privacy Policy</a>.
+                        </p>
+                    </div>
+                    <div id="user-selection">
+                        <button class="btn" id="accept-button" disabled>Accept</button>
+                        <button class="btn btn-decline" id="decline-button">Decline</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
  <!--================= FOOTER START ==================-->
 <footer>
     <div class="footer-container">
@@ -98,6 +198,7 @@ transition: background-color 0.2s ease; margin-left: 40px;
             <p  style="font-size: 20px;"><i class="fas fa-map-marker-alt"></i> Circumferential Road,Baguio City</p>
         </div>
 
+ 
         <div class="footer-social">
             <p class="footheader" style="font-weight: bold;font-size: 25px;">Follow Us</p>
             <a href="https://web.facebook.com/atab.healthcenter" style="font-size: 35px; color: #3b5998;"><i class="fab fa-facebook"></i></a>
@@ -106,7 +207,10 @@ transition: background-color 0.2s ease; margin-left: 40px;
             <a href="#"><i class="fab fa-instagram"></i></a> -->
 			<br>
 			<p class="footheader" style="font-weight: bold;font-size: 25px;">Reference</p>
-			<img src="/AAtabHealthCare/HealthTopics/images/DOH.png" alt="" style="border-radius: 110px; width: 80px; height: 80px;">
+			<a href="https://doh.gov.ph" >Department of Health</a>
+			<br>
+			<a href="https://www.who.int/" >World Health Organization</a>
+			
 			
 			
 			
@@ -115,8 +219,9 @@ transition: background-color 0.2s ease; margin-left: 40px;
 				<i class="fas fa-envelope"></i>
 			</a> -->
         </div>
+		
     </div>
-
+	<button id="backToTop"   class="back-to-top">↑ </button>
     <!-- <div class="footer-bottom">
         <p>&copy; 2024 Health Center. All rights reserved.</p>
     </div> -->
@@ -125,33 +230,75 @@ transition: background-color 0.2s ease; margin-left: 40px;
 <!--================= FOOTER END ==================-->
 
     <script>
-        // Button elements
-        const acceptButton = document.getElementById("accept-button");
-        const declineButton = document.getElementById("decline-button");
-        const termsLink = document.getElementById("terms-link");
-        const policyLink = document.getElementById("policy-link");
+     document.addEventListener("DOMContentLoaded", () => {
+    // Get elements
+    const acceptButton = document.getElementById("accept-button");
+    const declineButton = document.getElementById("decline-button");
+    const termsLink = document.getElementById("terms-link");
+    const privacyLink = document.getElementById("policy-link");
 
-        // Event listeners for terms and policy links
-        termsLink.addEventListener("click", () => {
-            alert("Terms of Service:\n\nBy using this tool, you agree to the terms that the results are for informational purposes only and not a professional diagnosis. For emergencies, seek immediate medical attention.");
+    // Enable/disable Accept button based on checkboxes
+    document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+        checkbox.addEventListener("change", function () {
+            const termsAccepted = document.getElementById("terms-checkbox").checked;
+            const privacyAccepted = document.getElementById("privacy-checkbox").checked;
+            acceptButton.disabled = !(termsAccepted && privacyAccepted);
         });
+    });
 
-        policyLink.addEventListener("click", () => {
-            alert("Privacy Policy:\n\nYour data will remain confidential and secure. It will not be shared or used for identification purposes and will only be used to improve this tool.");
-        });
-
-        // Handle Accept button click
+    // Event listener for Accept button
+    if (acceptButton) {
         acceptButton.addEventListener("click", () => {
-            // Redirect to the AI symptom checker page
-            window.location.href = "forwhom.html";
+            window.location.href = "forwhom.html"; // Redirect to forwhom.html
         });
+    }
 
-        // Handle Decline button click
+    // Event listener for Decline button
+    if (declineButton) {
         declineButton.addEventListener("click", () => {
-            // Redirect to the home page
-            window.location.href = "../index.html";
+            window.location.href = "AboutAi.html"; // Redirect to aboutai.html
         });
+    }
+
+    // Pop-up for Terms of Service
+    if (termsLink) {
+        termsLink.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent default link behavior
+            alert("📜 Terms of Service:\n\nBy using this tool, you acknowledge that the results are for informational purposes only and not a medical diagnosis. In case of a health emergency, seek professional medical assistance immediately.");
+        });
+    }
+
+    // Pop-up for Privacy Policy
+    if (privacyLink) {
+        privacyLink.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent default link behavior
+            alert("🔒 Privacy Policy:\n\nYour data will remain confidential and secure. It will not be shared or used for identification purposes and will be used solely to improve this tool.");
+        });
+    }
+});
+
     </script>
+     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var backToTopButton = document.getElementById("backToTop");
+        
+            // Show/hide the button on scroll
+            window.onscroll = function () {
+                if (document.documentElement.scrollTop > 300) {
+                    backToTopButton.classList.add("show");
+                } else {
+                    backToTopButton.classList.remove("show");
+                }
+            };
+        
+            // Scroll smoothly to the top when clicked
+            backToTopButton.addEventListener("click", function () {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+        });
+        </script>
+
     <script type="text/javascript" src="AiHeader.js"></script>
+    <script type="text/javascript" src="AiIndex.js"></script>
 </body>
 </html>

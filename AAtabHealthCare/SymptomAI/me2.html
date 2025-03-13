@@ -5,69 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Symptom Selector</title>
   <style>
-    /* General Styles */
-    /* body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      background-color: #f9f9f9;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    } */
+    .symptom-check-container {
+      max-width: 500px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 20px;
+    font-size: 20px;
+}
 
-    /* Container Styles */
-    .container {
-      margin: auto;
-      width: 50%;
-      margin-top: 50px;
-      background-color: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      max-width: 400px;
-      text-align: center;
-      width: 100%;
-    }
+.symptom-selection-card {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
 
-    h1 {
-      color: #333;
-      margin-bottom: 15px;
-    }
+select {
+  width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 20px;
+}
 
-    /* Dropdown Menu */
-    select {
-      width: 80%;
-      padding: 10px;
-      margin: 15px 0;
-      border: 1px solid #aaa;
-      border-radius: 5px;
-      font-size: 16px;
-    }
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 5px;
+}
 
-    /* Button Style */
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #2b7de2;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    button:hover {
-      background-color: #004080;
-    }
-
-    /* Message Section */
-    p {
-      margin-top: 15px;
-      color: #555;
-      font-size: 1rem;
-    }
+button:hover {
+    background-color: #0056b3;
+}
   </style>
    <link rel="stylesheet" href="AiHeader.css">
    <!--=========== MY CSS LINK START =============-->
@@ -99,29 +75,32 @@ transition: background-color 0.2s ease; margin-left: 40px;
 
 
    </header>
-   <h2 style="text-align: center;margin-top:30px ;">Symptoms Check</h2>
-   <p style="text-align: center;">Check your symptoms in minutes! Our Symptom Checker provides helpful guidance based on your health concerns.</p>
-  <div class="container">
-    <h1>Select Your Symptoms</h1>
-    
-    <select id="symptomDropdown">
-      <option value="" disabled selected>Select a symptom</option>
-      <option value="Cough">Cough</option>
-      <option value="Fatigue">Fatigue</option>
-      <option value="Fever">Fever</option>
-      <option value="Headache">Headache</option>
-      <option value="High Blood Pressure">High Blood Pressure</option>
-      <option value="Muscle Pain">Muscle Pain</option>
-      <option value="Nausea">Nausea & Vomiting</option>
-      <option value="Shortness of Breath">Shortness of Breath</option>
-      <option value="Sore Throat">Sore Throat</option>
-      <option value="Weight Loss">Weight Loss</option>
-    </select>
-    <br />
-    <button onclick="redirectToChecker()">Submit</button>
-    <p id="resultMessage"></p>
-  </div>
+  <div class="symptom-check-container">
+    <h2>Symptoms Check</h2>
+    <p>Check your symptoms in minutes! Our Symptom Checker provides helpful guidance based on your health concerns.</p>
 
+    <div class="symptom-selection-card">
+        <h1>Select Your Symptoms</h1>
+        
+        <select id="symptomDropdown">
+            <option value="" disabled selected>Select a symptom</option>
+            <option value="Cough">Cough</option>
+            <option value="Fatigue">Fatigue</option>
+            <option value="Fever">Fever</option>
+            <option value="Headache">Headache</option>
+            <option value="High Blood Pressure">High Blood Pressure</option>
+            <option value="Muscle Pain">Muscle Pain</option>
+            <option value="Nausea">Nausea & Vomiting</option>
+            <option value="Shortness of Breath">Shortness of Breath</option>
+            <option value="Sore Throat">Sore Throat</option>
+            <option value="Weight Loss">Weight Loss</option>
+        </select>
+
+        <br />
+        <button onclick="redirectToChecker()">Submit</button>
+        <p id="resultMessage"></p>
+    </div>
+</div>
   <br><br><br>
 <!--================= FOOTER START ==================-->
 <footer>
@@ -153,27 +132,31 @@ transition: background-color 0.2s ease; margin-left: 40px;
       </div>
 
       <div class="footer-social">
-          <p class="footheader" style="font-weight: bold;font-size: 25px;">Follow Us</p>
-          <a href="https://web.facebook.com/atab.healthcenter" style="font-size: 35px; color: #3b5998;"><i class="fab fa-facebook"></i></a>
-    <a href="https://web.facebook.com/messages/t/100068026195085" style="font-size: 35px;color: #0084ff;"><i class="fab fa-facebook-messenger"></i></a>
-          <!-- <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a> -->
-    <br>
-    <p class="footheader" style="font-weight: bold;font-size: 25px;">Reference</p>
-    <img src="/AAtabHealthCare/HealthTopics/images/DOH.png" alt="" style="border-radius: 110px; width: 80px; height: 80px;">
-    
-    
-    
-    <!-- Email Icon -->
-    <!-- <a href="" style="font-size: 35px;">
-      <i class="fas fa-envelope"></i>
-    </a> -->
-      </div>
-  </div>
+        <p class="footheader" style="font-weight: bold;font-size: 25px;">Follow Us</p>
+        <a href="https://web.facebook.com/atab.healthcenter" style="font-size: 35px; color: #3b5998;"><i class="fab fa-facebook"></i></a>
+  <a href="https://web.facebook.com/messages/t/100068026195085" style="font-size: 35px;color: #0084ff;"><i class="fab fa-facebook-messenger"></i></a>
+        <!-- <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a> -->
+  <br>
+  <p class="footheader" style="font-weight: bold;font-size: 25px;">Reference</p>
+  <a href="https://doh.gov.ph" >Department of Health</a>
+  <br>
+  <a href="https://www.who.int/" >World Health Organization</a>
+  
+  
+  
+  
+  <!-- Email Icon -->
+  <!-- <a href="" style="font-size: 35px;">
+    <i class="fas fa-envelope"></i>
+  </a> -->
+    </div>
 
-  <!-- <div class="footer-bottom">
-      <p>&copy; 2024 Health Center. All rights reserved.</p>
-  </div> -->
+</div>
+<button id="backToTop"   class="back-to-top">↑ </button>
+<!-- <div class="footer-bottom">
+    <p>&copy; 2024 Health Center. All rights reserved.</p>
+</div> -->
 </footer>
 
 <!--================= FOOTER END ==================-->
@@ -236,6 +219,26 @@ transition: background-color 0.2s ease; margin-left: 40px;
     }
   </script>
   <script type="text/javascript" src="AiHeader.js"></script>
+  <script type="text/javascript" src="AiIndex.js"></script>
+  <script>
+     document.addEventListener("DOMContentLoaded", function () {
+         var backToTopButton = document.getElementById("backToTop");
+     
+         // Show/hide the button on scroll
+         window.onscroll = function () {
+             if (document.documentElement.scrollTop > 300) {
+                 backToTopButton.classList.add("show");
+             } else {
+                 backToTopButton.classList.remove("show");
+             }
+         };
+     
+         // Scroll smoothly to the top when clicked
+         backToTopButton.addEventListener("click", function () {
+             window.scrollTo({ top: 0, behavior: "smooth" });
+         });
+     });
+     </script>
 </body>
 
 </html>
