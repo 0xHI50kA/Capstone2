@@ -145,10 +145,11 @@
         <li>💔 Chest pain that may be mistaken for a heart attack</li>
         <li>🚨 Vomiting blood or black stools</li>
     </ul>
-
+    <br>
+    <p>Reference:</p>
+    <a href="https://www.mayoclinic.org/diseases-conditions/gerd/" target="_blank" class="source-button">Acid Reflux</a>
     <div class="note">
-        <p><strong>Note:</strong> Occasional acid reflux is common, but persistent symptoms may indicate GERD, which requires medical attention. Proper management can improve quality of life.</p>
-        <a href="https://www.mayoclinic.org/diseases-conditions/gerd/" target="_blank" class="source-button">Source</a>
+        <p><strong>Note:</strong> Occasional acid reflux is common, but persistent symptoms may indicate GERD, which requires medical attention. Proper management can improve quality of life. However, if your symptoms worsen, you can contact us through our social media channels below or visit your nearest healthcare center.</p>
     </div>
 </div>
 
@@ -183,6 +184,7 @@
             <p  style="font-size: 20px;"><i class="fas fa-map-marker-alt"></i> Circumferential Road,Baguio City</p>
         </div>
 
+
         <div class="footer-social">
             <p class="footheader" style="font-weight: bold;font-size: 25px;">Follow Us</p>
             <a href="https://web.facebook.com/atab.healthcenter" style="font-size: 35px; color: #3b5998;"><i class="fab fa-facebook"></i></a>
@@ -191,7 +193,12 @@
             <a href="#"><i class="fab fa-instagram"></i></a> -->
 			<br>
 			<p class="footheader" style="font-weight: bold;font-size: 25px;">Reference</p>
-			<img class="healthimage" src="/AAtabHealthCare/HealthTopics/images/DOH.png" alt="" style="border-radius: 110px; width: 80px; height: 80px;">
+			<a href="https://doh.gov.ph" >Department of Health</a>
+			<br>
+			<a href="https://www.who.int/" >World Health Organization</a>
+            <br>
+            <a href="https://www.cdc.gov/health-topics.html" >Central for Diesase Control</a>
+			
 			
 			
 			
@@ -200,8 +207,9 @@
 				<i class="fas fa-envelope"></i>
 			</a> -->
         </div>
+		
     </div>
-
+	<button id="backToTop"   class="back-to-top">↑ </button>
     <!-- <div class="footer-bottom">
         <p>&copy; 2024 Health Center. All rights reserved.</p>
     </div> -->
@@ -210,5 +218,24 @@
 <!--================= FOOTER END ==================-->
     <script type="text/javascript" src="../HTheader.js"></script>
     <script type="text/javascript" src="../HTindex.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var backToTopButton = document.getElementById("backToTop");
+        
+            // Show/hide the button on scroll
+            window.onscroll = function () {
+                if (document.documentElement.scrollTop > 300) {
+                    backToTopButton.classList.add("show");
+                } else {
+                    backToTopButton.classList.remove("show");
+                }
+            };
+        
+            // Scroll smoothly to the top when clicked
+            backToTopButton.addEventListener("click", function () {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+        });
+        </script>
 </body>
 </html>

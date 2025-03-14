@@ -118,10 +118,11 @@
         <li><i class="fa-solid fa-lungs"></i> You have difficulty breathing</li>
         <li><i class="fa-solid fa-brain"></i> You have nasal discharge after a head injury</li>
     </ul>
-    
+    <br>
+    <p>Reference:</p>
+    <a href="https://www.cdc.gov/common-cold/about/index.html" target="_blank" class="source-button">Runny Nose</a>
     <div class="note">
         <p><strong>Note:</strong> Although a runny nose can be annoying, it’s often temporary and a sign that your immune system is working. However, if your symptoms worsen, you can contact us through our social media channels below or visit your nearest healthcare center.</p>
-        <a href="https://www.cdc.gov/common-cold/about/index.html" target="_blank" class="source-button">Source</a>
     </div>
 </div>
 
@@ -162,7 +163,12 @@
             <a href="#"><i class="fab fa-instagram"></i></a> -->
 			<br>
 			<p class="footheader" style="font-weight: bold;font-size: 25px;">Reference</p>
-			<img src="/AAtabHealthCare/HealthTopics/images/DOH.png" alt="" style="border-radius: 110px; width: 80px; height: 80px;">
+			<a href="https://doh.gov.ph" >Department of Health</a>
+			<br>
+			<a href="https://www.who.int/" >World Health Organization</a>
+            <br>
+            <a href="https://www.cdc.gov/health-topics.html" >Central for Diesase Control</a>
+			
 			
 			
 			
@@ -171,8 +177,9 @@
 				<i class="fas fa-envelope"></i>
 			</a> -->
         </div>
+		
     </div>
-
+	<button id="backToTop"   class="back-to-top">↑ </button>
     <!-- <div class="footer-bottom">
         <p>&copy; 2024 Health Center. All rights reserved.</p>
     </div> -->
@@ -181,5 +188,24 @@
 <!--================= FOOTER END ==================-->
     <script type="text/javascript" src="../HTheader.js"></script>
     <script type="text/javascript" src="../HTindex.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var backToTopButton = document.getElementById("backToTop");
+        
+            // Show/hide the button on scroll
+            window.onscroll = function () {
+                if (document.documentElement.scrollTop > 300) {
+                    backToTopButton.classList.add("show");
+                } else {
+                    backToTopButton.classList.remove("show");
+                }
+            };
+        
+            // Scroll smoothly to the top when clicked
+            backToTopButton.addEventListener("click", function () {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+        });
+        </script>
 </body>
 </html>
