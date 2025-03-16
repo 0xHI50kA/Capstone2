@@ -49,7 +49,11 @@
         } */
 
         /* Card Styles */
+        *{
+           
+        }
         .card-container {
+            
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -89,8 +93,8 @@
         }
 
         .card-img {
-            width: 80px;
-            height: 80px;
+            width: 150px;
+            height: 150px;
             margin-bottom: 15px;
         }
 
@@ -99,17 +103,18 @@
         }
 
         p {
-            font-size: 14px;
+            font-size: 20px;
             line-height: 1.5;
             color: #555;
         }
     </style>
-
+ 
   <!--=========== MY CSS LINK START =============-->
   
-      <link rel="stylesheet" type="text/css" href="css/index2.css">
+      <link rel="stylesheet" type="text/css" href="nearindex2.css">
       
   <!--=========== MY CSS LINK END =============-->
+  
   
       <!--============ FONT AWESOME CSS LINK START ============-->
   
@@ -132,13 +137,14 @@
     cursor: pointer; 
     font-size: 16px;
     transition: background-color 0.2s ease; margin-left: 40px;
-  " onclick="window.location.href='index.html'">← Back</button>
+  " onclick="window.location.href='/index.html'">← Back</button>
 
     <header class="headin">
 
 
     </header>
-    <p style="color: #0061ff; font-size: 30px; margin-top:90px ; text-align: center;">Nearby HealthCare</p>
+    <h1 style=" font-size: 30px; margin-top:90px ; text-align: center;">Nearby HealthCare</h1>
+    <br>
     
     <main >
         
@@ -152,18 +158,24 @@
                 </div>
             </div> -->
             <div class="bottom-cards">
-                <div class="card" id="medical-card" onclick="navigateTo('nurses.html')">
-                    <img src="images/pharmacy/MedicalClinic.jpg" alt="Medical" class="card-img">
+                <div class="card" id="medical-card" onclick="navigateTo('medical.html')">
+                    <img src="images/nearby/Hospital.jpg" alt="Medical" class="card-img">
+                    <p style="color: #0061ff; font-size: 30px;">Hospitals</p>
+                    <p>Explore medical services including general consultations and diagnostics.</p>
+                </div>
+            <div class="bottom-cards">
+                <div class="card" id="medical-card" onclick="navigateTo('medical.html')">
+                    <img src="images/nearby/MedicalClinic.jpg" alt="Medical" class="card-img">
                     <p style="color: #0061ff; font-size: 30px;">Medical Clinic</p>
                     <p>Explore medical services including general consultations and diagnostics.</p>
                 </div>
                 <div class="card" id="dental-card" onclick="navigateTo('nurses1.html')">
-                    <img src="images/pharmacy/DentalClinic.png" alt="Dental" class="card-img">
+                    <img src="images/nearby/DentalClinic.png" alt="Dental" class="card-img">
                     <p style="color: #0061ff; font-size: 30px;">Dental Clinic</p>
                     <p>Access oral health care services such as checkups, cleaning, and surgery.</p>
                 </div>
                 <div class="card" id="pharmacy-card" onclick="navigateTo('Doctors.html')">
-                    <img src="images/pharmacy/Pharmacy.jpg" alt="Pharmacy" class="card-img">
+                    <img src="images/nearby/Pharmacy.jpg" alt="Pharmacy" class="card-img">
                     <p style="color: #0061ff; font-size: 30px;">Pharmacies</p>
                     <p>Find medications and health products for your needs.</p>
                 </div>
@@ -233,7 +245,7 @@
             window.history.back();
         }
     </script>
-    <script type="text/javascript" src="javascript/header.js"></script>
-    <script type="text/javascript" src="javascript/index.js"></script>
+    <script type="text/javascript" src="nearheader.js"></script>
+    <script type="text/javascript" src="nearindex.js"></script>
 </body>
 </html>
