@@ -4,23 +4,23 @@ let slide = document.querySelector('.slide');
 
 let nurses = [
   {
-	nurseName: 'Cosape Dental Clinic',
+	nurseName: ' Brass Medical Clinic',
 	profile: 'View location',
-	link: 'rutchy.html',
-	nurseImage: 'images/pharmacy/dental1.jpg',
+	link: '_medical1.html',
+	nurseImage: 'images/pharmacy/clinic1.jpg',
 },
 {
-	nurseName: 'Geraldine Dental Clinic',
+	nurseName: 'Hospicare MD Clinic',
 	profile: 'View location',
-	link: 'chinenye.html',
-	nurseImage: 'images/pharmacy/clinic2.jpg'
+	link: '_medical2.html',
+	nurseImage: 'images/pharmacy/hospicare.jpg'
 },
-// {
-// 	nurseName: 'White DentalClinic',
-// 	profile: 'View location',
-// 	link: 'julie.html',
-// 	nurseImage: 'images/pharmacy/clinic3.jpg'
-// },
+{
+	nurseName: ' Dr. Arvelius Medical Clinic',
+	profile: 'View location',
+	link: '_medical3.html',
+	nurseImage: 'images/pharmacy/clinic3.jpg'
+},
 // {
 // 	nurseName: 'Hospitals',
 // 	profile: 'View location',

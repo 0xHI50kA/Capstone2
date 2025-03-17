@@ -6,7 +6,7 @@ let nurses = [
   {
 	nurseName: ' Brass Medical Clinic',
 	profile: 'View location',
-	link: 'buike.html',
+	link: 'medical.html',
 	nurseImage: 'images/pharmacy/clinic1.jpg',
 },
 {

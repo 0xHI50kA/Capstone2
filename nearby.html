@@ -94,12 +94,12 @@
             margin-bottom: 15px;
         }
 
-        h2 {
+        /* h2 {
             color: #007BFF;
-        }
+        } */
 
         p {
-            font-size: 14px;
+            font-size: 20px;
             line-height: 1.5;
             color: #555;
         }
@@ -138,7 +138,8 @@
 
 
     </header>
-    <p style="color: #0061ff; font-size: 30px; margin-top:90px ; text-align: center;">Nearby HealthCare</p>
+    <h1 style="font-size: 40px;  margin-top:90px ; text-align: center;">Nearby HealthCare</h1>
+    <br>
     
     <main >
         
@@ -152,17 +153,27 @@
                 </div>
             </div> -->
             <div class="bottom-cards">
-                <div class="card" id="medical-card" onclick="navigateTo('nurses.html')">
+                <div class="card" id="medical-card" onclick="navigateTo('about.html')">
+                    <img src="images/pharmacy/Station1.png" alt="Medical" class="card-img">
+                    <p style="color: #0061ff; font-size: 30px;">Atab Health Center</p>
+                    <p>Explore medical services including general consultations and diagnostics.</p>
+                </div>
+                <div class="card" id="medical-card" onclick="navigateTo('MedicalClinic.html')">
                     <img src="images/pharmacy/MedicalClinic.jpg" alt="Medical" class="card-img">
                     <p style="color: #0061ff; font-size: 30px;">Medical Clinic</p>
                     <p>Explore medical services including general consultations and diagnostics.</p>
                 </div>
-                <div class="card" id="dental-card" onclick="navigateTo('nurses1.html')">
+                <div class="card" id="medical-card" onclick="navigateTo('MedicalClinic.html')">
+                    <img src="images/pharmacy/MedicalClinic.jpg" alt="Medical" class="card-img">
+                    <p style="color: #0061ff; font-size: 30px;">Medical Clinic</p>
+                    <p>Explore medical services including general consultations and diagnostics.</p>
+                </div>
+                <div class="card" id="dental-card" onclick="navigateTo('DentalClinic.html')">
                     <img src="images/pharmacy/DentalClinic.png" alt="Dental" class="card-img">
                     <p style="color: #0061ff; font-size: 30px;">Dental Clinic</p>
                     <p>Access oral health care services such as checkups, cleaning, and surgery.</p>
                 </div>
-                <div class="card" id="pharmacy-card" onclick="navigateTo('Doctors.html')">
+                <div class="card" id="pharmacy-card" onclick="navigateTo('Pharmacies.html')">
                     <img src="images/pharmacy/Pharmacy.jpg" alt="Pharmacy" class="card-img">
                     <p style="color: #0061ff; font-size: 30px;">Pharmacies</p>
                     <p>Find medications and health products for your needs.</p>
@@ -172,56 +183,63 @@
     </main>
     <br><br><br>
     <footer>
-        <div class="footer-container">
-            <div class="footer-logo">
-                <p style="font-weight: bold;font-size: 25px; color: #0061ff; ">SymptoAid</p>
-                <p>SymptoAid is your reliable health companion, providing accurate symptom checks and essential medical guidance. Visit us at Teodora Alonzo Street for more information and healthcare support.</p>
-            </div>
-    
-            <div class="footer-links">
-                <p style="font-weight: bold;font-size: 25px;">Quick Links</p>
-                <ul>
-                    <li ><a href="../../index.html">Home</a></li>
-                    <li ><a href="../atabs_Health_Care/Admin2/news-report.php">News</a></li>
-                    <li ><a href="../AAtabHealthCare/Eventss/Event1.html">Events</a></li>
-                    <li ><a href="../AAtabHealthCare/Servicess/services.html">Services</a></li>
-                    <li ><a href="../AAtabHealthCare/SymptomAI/AboutAI.html">Symptom Checker</a></li>
-                    <li ><a href="nearby.html">Nearby Healthcare</a></li>
-                </ul>
-            </div>
-    
-            <div class="footer-contact">
-                <p style="font-weight: bold;font-size: 25px;">Contact Us</p>
-                <br>
-                <p  style="font-size: 20px;"><i class="fas fa-envelope"></i> atabhc2019@gmail.com</p>
-                <p style="font-size: 20px;"><i class="fas fa-phone" ></i> +4209087 </p>
+        <footer>
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <p style="font-weight: bold;font-size: 25px; color: #0061ff; "> <i class="fa-solid fa-notes-medical"></i> SymptoAid</p>
+                    <p style="font-size: 20px;">SymptoAid is your reliable health companion, providing accurate symptom checks and essential medical guidance.</p>
+                </div>
+        
+                <div class="footer-links">
+                    <p class="footheader" style="font-weight: bold;font-size: 25px;">Important Links</p>
+                    <ul>
+                        <!-- <li ><a href="../../index.html">Home</a></li> -->
+                        <li ><a href="../atabs_Health_Care/Admin2/news-report.php">News</a></li>
+                        <li ><a href="../AAtabHealthCare/Eventss/Event1.html">Events</a></li>
+                        <!-- <li ><a href="../AAtabHealthCare/Servicess/services.html">Services</a></li> -->
+                        <li ><a href="../AAtabHealthCare/SymptomAI/AboutAI.html">Symptom Checker</a></li>
+                        <li ><a href="nearby.html">Nearby Healthcare</a></li>
+                    </ul>
+                </div>
+        
+                <div class="footer-contact">
+                    <p class="footheader" style="font-weight: bold;font-size: 25px;">Contact Us</p>
+                    
+                    <p  style="font-size: 20px;"><i class="fas fa-envelope"></i> atabhc2019@gmail.com</p>
+                    <p style="font-size: 20px;"><i class="fas fa-phone" ></i> +4209087 </p>
+                    
+                    <p  style="font-size: 20px;"><i class="fas fa-map-marker-alt"></i> Circumferential Road,Baguio City</p>
+                </div>
+        
+                <div class="footer-social">
+                    <p class="footheader" style="font-weight: bold;font-size: 25px;">Follow Us</p>
+                    <a href="https://web.facebook.com/atab.healthcenter" style="font-size: 35px; color: #3b5998;"><i class="fab fa-facebook"></i></a>
+                    <a href="https://web.facebook.com/messages/t/100068026195085" style="font-size: 35px;color: #0084ff;"><i class="fab fa-facebook-messenger"></i></a>
+                    <!-- <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a> -->
+                    <br>
+                    <p class="footheader" style="font-weight: bold;font-size: 25px;">Reference</p>
+                    <a href="https://doh.gov.ph" >Department of Health</a>
+                    <br>
+                    <a href="https://www.who.int/" >World Health Organization</a>
+                    
+                    
+                    
+                    
+                    <!-- Email Icon -->
+                    <!-- <a href="" style="font-size: 35px;">
+                        <i class="fas fa-envelope"></i>
+                    </a> -->
+                </div>
                 
-                <p  style="font-size: 20px;"><i class="fas fa-map-marker-alt"></i> Circumferential Road,Baguio City</p>
             </div>
+            <button id="backToTop"   class="back-to-top">↑ </button>
+            <!-- <div class="footer-bottom">
+                <p>&copy; 2024 Health Center. All rights reserved.</p>
+            </div> -->
+        </footer>
     
-            <div class="footer-social">
-                <p style="font-weight: bold;font-size: 25px;">Follow Us</p>
-                <a href="https://web.facebook.com/atab.healthcenter" style="font-size: 35px;"><i class="fab fa-facebook"></i></a>
-                <a href="https://web.facebook.com/messages/t/100068026195085" style="font-size: 35px;"><i class="fab fa-facebook-messenger"></i></a>
-                <!-- <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a> -->
-                <br>
-                <p style="font-weight: bold;font-size: 25px;">Reference By:</p>
-                <img src="AAtabHealthCare/HealthTopics/images/DOH.png" alt="" style="border-radius: 110px; width: 80px; height: 80px;">
-                
-                
-                
-                <!-- Email Icon -->
-                <!-- <a href="" style="font-size: 35px;">
-                    <i class="fas fa-envelope"></i>
-                </a> -->
-            </div>
-        </div>
-    
-        <!-- <div class="footer-bottom">
-            <p>&copy; 2024 Health Center. All rights reserved.</p>
-        </div> -->
-    </footer>
+    <!--================= FOOTER END ==================-->
     <script>
         // Function to navigate to the specific HTML page
         function navigateTo(page) {
@@ -235,5 +253,24 @@
     </script>
     <script type="text/javascript" src="javascript/header.js"></script>
     <script type="text/javascript" src="javascript/index.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var backToTopButton = document.getElementById("backToTop");
+        
+            // Show/hide the button on scroll
+            window.onscroll = function () {
+                if (document.documentElement.scrollTop > 300) {
+                    backToTopButton.classList.add("show");
+                } else {
+                    backToTopButton.classList.remove("show");
+                }
+            };
+        
+            // Scroll smoothly to the top when clicked
+            backToTopButton.addEventListener("click", function () {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+        });
+        </script>
 </body>
 </html>
