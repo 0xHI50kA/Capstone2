@@ -1154,121 +1154,202 @@ footer {
 
 /*============ FOOTER END===========*/
 
+/*======== RESPONSIVENESS ======*/
+
 @media(max-width: 768px) {
 
 
-/*nav links*/
-	.links {
-	display: block;
-	position: fixed;
-	top: 0;
-	left: -1000px;
-	transition: 1s;
-	justify-content: center;
-background: var(--light);
-color: var(--light);
-width: 100%;
-height: 100vh;
-	padding-top: 100px;
-		
-}
-.links > ul{
-	display: block;
-
-}
-.links ul li {
-	display: block;
-	color: var(--dark);
-	margin: 20px 0;
-	font-size: 20px;
-}
-.cont a{
+	/*nav links*/
+		.links {
+		display: block;
+		position: fixed;
+		top: 0;
+		left: -1000px;
+		transition: 1s;
+		justify-content: center;
+	background: var(--light);
 	color: var(--light);
-}
-.links div{
-	margin: 30px ;
-}
-
-.bars{
-	display: block;
-	position: relative;
-	z-index: 2;
-}
-.logo a{
-	font-size: 20px;
-	font-weight: bold;
-}
-.ac{
-	font-size: 15px;
-}
-#close{
-	display: none;
-}
-#open{
-	font-size: 20px;
-}
-#open:hover{
-	background: var(--light);
-	border: solid 2px var(--dark);
-	color: var(--dark);
-}
-#close:hover{
-	background: var(--light);
-	border: solid 2px var(--dark);
-	color: var(--dark);
-}
-
-.well{
-	font-size: 30px;
-}
-.im{
-	font-size: 18px;
-}
-
-.teamlead, .slide{
-	padding: 0;
-}
-
-.aptImage img{
-	max-width: 150px;
-	min-height: 350px;
-}
-
-.aptC span{
-	font-size: 10px;
-}
-.aptSubH{
-	font-size: 15px;
-}
-.faqImg{
-	display: none;
-}
-
-
-.serve{
-	top: 100px;
-	padding:5px 10px;
-}
-.serve i{
-	font-size: 30px;
-}
-.two .s{
-	font-size: 10px;
-}
-.two .t{
-	font-size: 10px;
-}
-.heading .subheading{
-	font-size: 22px;
-}
-.booking{
-	display: flex;
-	justify-content: center;
-	text-align: center;
-	align-items: center;
-	position: fixed;
-/*	top: 25%;
-	left: 30%;*/
-}
-
-}
+	width: 100%;
+	height: 100vh;
+		padding-top: 100px;
+			
+	}
+	.links > ul{
+		display: block;
+	
+	}
+	.links ul li {
+		display: block;
+		color: var(--dark);
+		margin: 20px 0;
+		margin-left: 33px;
+		font-size: 20px;
+	}
+	.cont a{
+		color: var(--light);
+	}
+	.links div{
+		margin: 30px ;
+	}
+	
+	.bars{
+		display: block;
+		position: relative;
+		z-index: 2;
+		margin-bottom: 0px;
+	}
+	.logo a{
+		font-size: 20px;
+		font-weight: bold;
+	}
+	.ac{
+		font-size: 15px;
+	}
+	/* Hide Close Button Initially */
+	#close {
+		display: none; 
+	}
+	
+	/* Open Button Styles */
+	#open {
+		font-size: 24px;
+		background: var(--light);
+	
+		color: var(--dark);
+	
+		cursor: pointer;
+		border-radius: 5px;
+		transition: all 0.3s ease-in-out;
+	}
+	
+	/* Hover Effect for Open Button */
+	#open:hover {
+		background: darkgray;
+	}
+	
+	/* Close Button Styles (Initially Hidden) */
+	#close {
+		font-size: 24px;
+		background: red;
+	
+		color: white;
+	
+		cursor: pointer;
+		border-radius: 5px;
+		transition: all 0.3s ease-in-out;
+	}
+	
+	/* Hover Effect for Close Button */
+	#close:hover {
+		background: darkred;
+	}
+	
+	/* Toggle Open/Close Buttons Using JavaScript */
+	.hidden {
+		display: none;
+	}
+	
+	
+	.well{
+		font-size: 30px;
+	}
+	.im{
+		font-size: 18px;
+	}
+	
+	.teamlead, .slide{
+		padding: 0;
+	}
+	
+	.aptImage img{
+		max-width: 150px;
+		min-height: 350px;
+	}
+	
+	.aptC span{
+		font-size: 10px;
+	}
+	.aptSubH{
+		font-size: 15px;
+	}
+	.faqImg{
+		display: none;
+	}
+	
+	
+	.serve{
+		top: 100px;
+		padding:5px 10px;
+	}
+	.serve i{
+		font-size: 30px;
+	}
+	.two .s{
+		font-size: 10px;
+	}
+	.two .t{
+		font-size: 10px;
+	}
+	.heading .subheading{
+		font-size: 22px;
+	}
+	.booking{
+		display: flex;
+		justify-content: center;
+		text-align: center;
+		align-items: center;
+		position: fixed;
+	/*	top: 25%;
+		left: 30%;*/
+	}
+	
+	.footer-container {
+		grid-template-columns: 1fr; /* Stack elements vertically */
+		text-align: center;
+		gap: 15px;
+		padding: 20px;
+	}
+	
+	.footer-logo h2 {
+		font-size: 22px;
+	}
+	
+	.footer-links p,
+	.footer-contact p,
+	.footer-social p {
+		font-size: 16px;
+	}
+	
+	.footer-links ul li a {
+		font-size: 18px;
+	}
+	
+	.footer-contact i {
+		font-size: 18px;
+	}
+	
+	.footer-social a {
+		font-size: 18px;
+		
+	}
+	
+	.subscribe form input {
+		font-size: 18px;
+		padding: 12px;
+	}
+	
+	.subscribe form button {
+		font-size: 14px;
+		padding: 8px;
+	}
+	
+	.copy p {
+		font-size: 15px;
+		margin: 10px;
+	}
+	
+	.dev a {
+		font-size: 14px;
+	}
+	
+	}

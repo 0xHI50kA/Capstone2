@@ -56,6 +56,7 @@ function renderHeader(argument) {
 		
 </div>
 	
+	
 	<div class="bars">
     <i id="open" class="menu-icon">☰</i> <!-- Open Button (Hamburger) -->
     <i id="close" class="menu-icon">✖</i> <!-- Close Button (X) -->

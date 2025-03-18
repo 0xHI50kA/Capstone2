@@ -5,26 +5,26 @@ let doctors = [
 {
 	doctorName: 'URR Medica Pharmacy',
 	profile: 'View Location',
-	link: 'chinny.html',
+	link: '_pharmacy1.html',
 	doctorImage: 'images/pharmacy/pharmacy1.jpg',
 },
 
 {
 	doctorName: 'Synergistic Pharmacy',
 	profile: 'View Location',
-	link: 'ebuka.html',
+	link: '_pharmacy2.html',
 	doctorImage: 'images/pharmacy/pharmacy2.jpg'
 },
 {
 	doctorName: 'Ka Mark\'s Pharmacy',
 	profile: 'View Location',
-	link: 'freeman.html',
+	link: '_pharmacy3.html',
 	doctorImage: 'images/pharmacy/pharmacy3.jpg'
 },
 {
 	doctorName: 'Rockgold Pharmacy',
 	profile: 'View Location',
-	link: 'henry.html',
+	link: '_pharmacy4.html',
 	doctorImage: 'images/pharmacy/pharmacy4.jpg'
 },
 // {

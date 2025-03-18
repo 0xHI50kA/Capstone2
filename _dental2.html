@@ -51,14 +51,85 @@ transition: background-color 0.2s ease; margin-left: 40px;
 <!--================= chinenye PROFILE END ==================-->
 </main>
 <!--============FOOTER START===========-->
-<footer class="footer">
-	
+<footer>
+	<div class="footer-container">
+		<div class="footer-logo">
+			<p style="font-weight: bold;font-size: 25px; color: #0061ff; "> <i class="fa-solid fa-notes-medical"></i> SymptoAid</p>
+			<p style="font-size: 20px;">SymptoAid is your reliable health companion, providing accurate symptom checks and essential medical guidance.</p>
+		</div>
+
+		<div class="footer-links">
+			<p class="footheader" style="font-weight: bold;font-size: 25px;">Important Links</p>
+			<ul>
+				<!-- <li ><a href="../../index.html">Home</a></li> -->
+				<li ><a href="../atabs_Health_Care/Admin2/news-report.php">News</a></li>
+				<li ><a href="../AAtabHealthCare/Eventss/Event1.html">Events</a></li>
+				<!-- <li ><a href="../AAtabHealthCare/Servicess/services.html">Services</a></li> -->
+				<li ><a href="../AAtabHealthCare/SymptomAI/AboutAI.html">Symptom Checker</a></li>
+				<li ><a href="nearby.html">Nearby Healthcare</a></li>
+			</ul>
+		</div>
+
+		<div class="footer-contact">
+			<p class="footheader" style="font-weight: bold;font-size: 25px;">Contact Us</p>
+			
+			<p  style="font-size: 20px;"><i class="fas fa-envelope"></i> atabhc2019@gmail.com</p>
+			<p style="font-size: 20px;"><i class="fas fa-phone" ></i> +4209087 </p>
+			
+			<p  style="font-size: 20px;"><i class="fas fa-map-marker-alt"></i> Circumferential Road,Baguio City</p>
+		</div>
+
+		<div class="footer-social">
+			<p class="footheader" style="font-weight: bold;font-size: 25px;">Follow Us</p>
+			<a href="https://web.facebook.com/atab.healthcenter" style="font-size: 35px; color: #3b5998;"><i class="fab fa-facebook"></i></a>
+			<a href="https://web.facebook.com/messages/t/100068026195085" style="font-size: 35px;color: #0084ff;"><i class="fab fa-facebook-messenger"></i></a>
+			<!-- <a href="#"><i class="fab fa-twitter"></i></a>
+			<a href="#"><i class="fab fa-instagram"></i></a> -->
+			<br>
+			<p class="footheader" style="font-weight: bold;font-size: 25px;">Reference</p>
+			<a href="https://doh.gov.ph" >Department of Health</a>
+			<br>
+			<a href="https://www.who.int/" >World Health Organization</a>
+			
+			
+			
+			
+			<!-- Email Icon -->
+			<!-- <a href="" style="font-size: 35px;">
+				<i class="fas fa-envelope"></i>
+			</a> -->
+		</div>
+		
+	</div>
+	<button id="backToTop"   class="back-to-top">↑ </button>
+	<!-- <div class="footer-bottom">
+		<p>&copy; 2024 Health Center. All rights reserved.</p>
+	</div> -->
 </footer>
 <!--================= FOOTER END ==================-->
 
 
 <script type="text/javascript" src="javascript/header.js"></script>
 <script type="text/javascript" src="javascript/index.js"></script>
-<script type="text/javascript" src="javascript/chinenye.js"></script>
+<script type="text/javascript" src="javascript/_dental2.js"></script>
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		var backToTopButton = document.getElementById("backToTop");
+	
+		// Show/hide the button on scroll
+		window.onscroll = function () {
+			if (document.documentElement.scrollTop > 300) {
+				backToTopButton.classList.add("show");
+			} else {
+				backToTopButton.classList.remove("show");
+			}
+		};
+	
+		// Scroll smoothly to the top when clicked
+		backToTopButton.addEventListener("click", function () {
+			window.scrollTo({ top: 0, behavior: "smooth" });
+		});
+	});
+	</script>
 </body>
 </html>
