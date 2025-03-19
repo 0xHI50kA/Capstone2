@@ -1,4 +1,6 @@
 <?php
+include('includes/connection.php'); // Database connection
+
 // Database connection details
 $host = "localhost";
 $dbname = "hms_db";
@@ -6,16 +8,13 @@ $username = "root";
 $password = "";
 
 try {
-    // Create a PDO instance
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Fetch news from the database
-    $sql = "SELECT * FROM news ORDER BY created_at DESC";
+    // Fetch all news records
+    $sql = "SELECT * FROM news ORDER BY id DESC";
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
-
-    // Fetch all rows into $newsItems
     $newsItems = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
     die("Database connection failed: " . $e->getMessage());
@@ -24,7 +23,11 @@ try {
 
 <!DOCTYPE html>
 <html lang="en">
-<!-- <link rel="stylesheet" href="../messenger/AiHeader.css"> -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Health News</title>
+    <!-- <link rel="stylesheet" href="../messenger/AiHeader.css"> -->
 <link rel="stylesheet" type="text/css" href="../css/index1.css">
     	<!--============ FONT AWESOME CSS LINK START ============-->
 
@@ -32,48 +35,15 @@ try {
      <link rel="stylesheet" href="css/styles.css">
      <link rel="stylesheet" href="css/footer.css">
         <!--============ FONT AWESOME CSS LINK END ============-->
-
-<head>
-    <!-- Header Section -->
-  
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News Reports</title>
     <style>
-        /* General body styles */
-        /* body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #fdfdfd;
+        body {
+            font-family: 'Times New Roman', serif;
+            background-color: #f5f5f5;
             margin: 0;
-            padding: 10px;
-        } */
-
-        h2 {
+            padding: 0;
             text-align: center;
-            color: #333;
-            font-size: 26px;
-            margin-top: 100px;
         }
 
-        /* Back Button Styling */
-        .back-btn {
-            display: inline-block;
-            padding: 10px 15px;
-            font-size: 16px;
-            background-color: #555;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-bottom: 10px;
-            transition: background-color 0.2s ease;
-        }
-
-        .back-btn:hover {
-            background-color: #333;
-        }
-
-        /* News container styles */
         .news-container {
             display: flex;
             flex-wrap: wrap;
@@ -85,6 +55,7 @@ try {
 
         .news-item {
             width: 320px;
+            height: 200px;
             background-color: #ffffff;
             border: 1px solid #ddd;
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
@@ -94,162 +65,134 @@ try {
             border-radius: 8px;
         }
 
+
         .news-item:hover {
-            background-color: #f1f1f1;
-            transform: scale(1.05);
+            background-color: #f9f9f9;
+            box-shadow: 2px 2px 5px rgba(0, 128, 0, 0.7); 
         }
 
         .news-item h3 {
-            font-size: 18px;
-            margin-bottom: 8px;
+            font-size: 1.4em;
             color: #333;
         }
 
         .news-item p {
-            font-size: 14px;
+            font-size: 1.1em;
             color: #555;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            margin-bottom: 8px;
         }
 
-        /* Modal styles for newspaper-like view */
+        .news-item small {
+            color: #777;
+            font-style: italic;
+        }
+
+        /* Modal Styling */
         .modal {
             display: none;
             position: fixed;
-            top: 0;
+            z-index: 10;
             left: 0;
+            top: 0;
             width: 100%;
             height: 100%;
-            background-color: #fff;
-            z-index: 1000;
-            overflow-y: auto;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
         }
 
         .modal-content {
-            max-width: 1200px;
-            margin: 30px auto;
+            background-color: white;
+            margin: 10% auto;
             padding: 20px;
-            border: 1px solid #ddd;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            font-size: 16px;
-            line-height: 1.8;
+            width: 60%;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            position: relative;
         }
 
-        /* Newspaper-like columns layout */
-        .newspaper-view {
-            display: flex;
-            gap: 20px;
-            column-count: 2;
-            column-gap: 20px;
-            column-rule: 1px solid #aaa;
-            text-align: justify;
-        }
-
-        /* Header styles */
-        .news-header {
-            text-align: center;
-            font-size: 22px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .news-footer {
-            font-size: 12px;
-            color: gray;
-            text-align: center;
-            margin: 15px 0;
-        }
-
-        /* Close button */
-        .close-btn {
+        .close {
+            color: #aaa;
             position: absolute;
-            top: 15px;
             right: 20px;
-            background: #e74c3c;
-            border: none;
-            color: white;
-            font-size: 16px;
-            padding: 5px 10px;
+            top: 10px;
+            font-size: 30px;
             cursor: pointer;
-            border-radius: 5px;
+        }
+        h1{
+            margin-top: 100px;
+        }
+        .close:hover {
+            color: red;
         }
 
-        /* Responsive Breakpoints */
         @media (max-width: 768px) {
             .news-container {
-                flex-direction: column;
-                gap: 10px;
+                grid-template-columns: 1fr; /* Single column for mobile */
             }
 
-            .newspaper-view {
-                column-count: 1;
+            .modal-content {
+                width: 90%;
             }
         }
     </style>
 </head>
 
-<body>
-    <!-- Back Button -->
-    <button style="
-    position: absolute;
-padding: 10px 20px; 
-margin-top: 10px;
-background-color: #6c757d; 
-color: white; 
-border: none; 
-border-radius: 5px; 
-cursor: pointer; 
-font-size: 16px;
-transition: background-color 0.2s ease; margin-left: 40px;margin-top: 100px;
-" onclick="window.location.href='../index.html#mainpage'">← Back</button>
+     <!-- Back Button -->
+    
 
            <!-- Header Section -->
     <header class="headin">
 
 
 </header>
+        
+    <h1 >📰 Latest Health News From Atabs Health Care Center</h1>
 
-    <h2>Latest Health News From Atabs Health Care Center </h2>
-    
     <div class="news-container">
         <?php if (!empty($newsItems) && count($newsItems) > 0): ?>
             <?php foreach ($newsItems as $news): ?>
-                <div class="news-item" onclick="openModal('<?php echo addslashes($news['title']); ?>', '<?php echo addslashes($news['content']); ?>', '<?php echo $news['created_at']; ?>')">
+                <div class="news-item" onclick="openModal('<?php echo addslashes($news['title']); ?>', '<?php echo addslashes($news['content']); ?>', '<?php echo htmlspecialchars($news['image']); ?>')">
                     <h3><?php echo htmlspecialchars($news['title']); ?></h3>
-                    <p><?php echo htmlspecialchars(substr($news['content'], 0, 50)) . '...'; ?></p>
-                    <small>Published on: <?php echo $news['created_at']; ?></small>
+                    <p><?php echo htmlspecialchars(substr($news['content'], 0, 80)) . '...'; ?></p>
+                    <!-- <small>🗓 Published on: <?php echo date("F j, Y", strtotime($news['created_at'])); ?></small> -->
                 </div>
             <?php endforeach; ?>
         <?php else: ?>
             <p>No news reports found.</p>
         <?php endif; ?>
     </div>
-    <footer>
+
+    <!-- Modal -->
+    <div id="newsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalContent"></p>
+            <img id="modalImage" src="" alt="News Image" style="width:100%; max-height:100%; object-fit:cover; border-radius:5px;">
+        </div>
+    </div>
+  <!--================= FOOTER START ==================-->
+<footer>
     <div class="footer-container">
         <div class="footer-logo">
-            <p style="font-weight: bold;font-size: 25px; color: #0061ff; ">SymptoAid</p>
-            <p>SymptoAid is your reliable health companion, providing accurate symptom checks and essential medical guidance. Visit us at Teodora Alonzo Street for more information and healthcare support.</p>
+            <p style="font-weight: bold;font-size: 25px; color: #0061ff; "> <i class="fa-solid fa-notes-medical"></i> SymptoAid</p>
+            <p style="font-size: 20px;">SymptoAid is your reliable health companion, providing accurate symptom checks and essential medical guidance.</p>
         </div>
 
         <div class="footer-links">
-            <p style="font-weight: bold;font-size: 25px;">Quick Links</p>
+            <p class="footheader" style="font-weight: bold;font-size: 25px;">Important Links</p>
             <ul>
-                <li ><a href="../index.html">Home</a></li>
+                <!-- <li ><a href="../../index.html">Home</a></li> -->
                 <li ><a href="/atabs_Health_Care/Admin2/news-report.php">News</a></li>
                 <li ><a href="../AAtabHealthCare/Eventss/Event1.html">Events</a></li>
-                <li ><a href="../AAtabHealthCare/Servicess/services.html">Services</a></li>
+                <!-- <li ><a href="../AAtabHealthCare/Servicess/services.html">Services</a></li> -->
 				<li ><a href="../AAtabHealthCare/SymptomAI/AboutAI.html">Symptom Checker</a></li>
-				<li ><a href="../nearby.html">Nearby Healthcare</a></li>
+				<li ><a href="/atabs_Health_Care/nearby.html">Nearby Healthcare</a></li>
             </ul>
         </div>
 
         <div class="footer-contact">
-            <p style="font-weight: bold;font-size: 25px;">Contact Us</p>
-			<br>
+            <p class="footheader" style="font-weight: bold;font-size: 25px;">Contact Us</p>
+			
 			<p  style="font-size: 20px;"><i class="fas fa-envelope"></i> atabhc2019@gmail.com</p>
             <p style="font-size: 20px;"><i class="fas fa-phone" ></i> +4209087 </p>
 			
@@ -257,42 +200,37 @@ transition: background-color 0.2s ease; margin-left: 40px;margin-top: 100px;
         </div>
 
         <div class="footer-social">
-            <p style="font-weight: bold;font-size: 25px;">Follow Us</p>
-            <a href="#" style="font-size: 35px;"><i class="fab fa-facebook"></i></a>
+            <p class="footheader" style="font-weight: bold;font-size: 25px;">Follow Us</p>
+            <a href="https://web.facebook.com/atab.healthcenter" style="font-size: 35px; color: #3b5998;"><i class="fab fa-facebook"></i></a>
+			<a href="https://web.facebook.com/messages/t/100068026195085" style="font-size: 35px;color: #0084ff;"><i class="fab fa-facebook-messenger"></i></a>
             <!-- <a href="#"><i class="fab fa-twitter"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a> -->
 			<br>
-			<p style="font-weight: bold;font-size: 25px;">Send Us Message</p>
-			<a href="" style="font-size: 35px;">
-				<i class="fab fa-facebook-messenger"></i>
-			</a>
+			<p class="footheader" style="font-weight: bold;font-size: 25px;">Reference</p>
+			<a href="https://doh.gov.ph" >Department of Health</a>
+			<br>
+			<a href="https://www.who.int/" >World Health Organization</a>
+			
+			
+			
 			
 			<!-- Email Icon -->
-			<a href="mailto:your-email@example.com" style="font-size: 35px;">
+			<!-- <a href="" style="font-size: 35px;">
 				<i class="fas fa-envelope"></i>
-			</a>
+			</a> -->
         </div>
+		
     </div>
-
+	<button id="backToTop"   class="back-to-top">↑ </button>
     <!-- <div class="footer-bottom">
         <p>&copy; 2024 Health Center. All rights reserved.</p>
     </div> -->
 </footer>
-    <!-- Modal for newspaper-like reading -->
-    <div class="modal" id="newsModal">
-        <button class="close-btn" onclick="closeModal()">Close</button>
-        <div class="modal-content">
-            <div class="news-header" id="modalTitle"></div>
-            <div class="newspaper-view" id="modalContent"></div>
-            <div class="news-footer" id="modalDate"></div>
-        </div>
-    </div>
-
     <script>
-        function openModal(title, content, date) {
+        function openModal(title, content, image) {
             document.getElementById('modalTitle').innerText = title;
-            document.getElementById('modalContent').innerHTML = `<p>${content}</p>`;
-            document.getElementById('modalDate').innerText = "Published on: " + date;
+            document.getElementById('modalContent').innerText = content;
+            document.getElementById('modalImage').src = "uploads/" + image;
             document.getElementById('newsModal').style.display = "block";
         }
 
@@ -301,6 +239,6 @@ transition: background-color 0.2s ease; margin-left: 40px;margin-top: 100px;
         }
     </script>
     <script type="text/javascript" src="../javascript/header1.js"></script>
+    <script type="text/javascript" src="../javascript/index.js"></script>
 </body>
-
 </html>

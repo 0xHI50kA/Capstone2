@@ -4,7 +4,7 @@ if(empty($_SESSION['name']))
 {
 	header('location:index.php');
 }
-include('header.php');
+include('header2.php');
 include('includes/connection.php');
 ?>
 <?php

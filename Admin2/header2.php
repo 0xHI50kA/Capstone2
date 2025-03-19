@@ -67,7 +67,7 @@
                     if($_SESSION['role']==1){?>
                     <ul>
                         
-                        <li class="active">
+                        <li >
                             <a href="dashboard.php"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
                         </li>
                         
@@ -87,10 +87,10 @@
                         <li>
                             <a href="employees.php"><i class="fa fa-user"></i> <span>Employees</span></a>
                         </li> -->
-                        <li>
+                        <li >
                             <a href="updateCalendar.php"><i class="fa fa-calendar"></i> <span>Update Event Calendar</span></a>
                         </li>
-                        <li>
+                        <li class="active">
                             <a href="updateNews.php"><i class="fa fa-newspaper"></i></i><span>Update news</span></a>
                         </li>
                         
